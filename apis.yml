@@ -36,7 +36,13 @@ apis:
       - Java
       - Real-Time Configuration
       - Open Source
-    properties: []
+    baseURL: http://localhost:8070
+    properties:
+      - type: Documentation
+        url: https://www.apolloconfig.com/#/en/portal/apollo-open-api-platform
+      - type: OpenAPI
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/openapi/apollo-open-api.yml
 common:
   - type: Website
     url: https://www.apolloconfig.com/
