@@ -1,0 +1,28 @@
+aid: apollo-config
+name: Apollo Config
+description: >-
+  Apollo is a reliable configuration management system for distributed systems from Ctrip providing centralized config management and real-time updates.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Microservices
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/apis.yml
+created: '2026-03-26'
+modified: '2026-03-26'
+specificationVersion: '0.19'
+apis:
+  - aid: apollo-config:apollo-config
+    name: Apollo Config
+    description: >-
+      Apollo is a reliable configuration management system for distributed systems from Ctrip providing centralized config management and real-time updates.
+    humanURL: https://github.com/api-evangelist/apollo-config
+    tags:
+      - Microservices
+    properties: []
+common:
+  - type: Website
+    url: https://github.com/api-evangelist/apollo-config
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
