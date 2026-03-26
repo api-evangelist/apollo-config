@@ -1,11 +1,20 @@
 aid: apollo-config
 name: Apollo Config
 description: >-
-  Apollo is a reliable configuration management system for distributed systems from Ctrip providing centralized config management and real-time updates.
+  Apollo is a reliable, open-source configuration management system suitable for
+  microservice configuration management scenarios, providing centralized
+  configuration management, real-time updates, versioning, and multi-environment
+  support. Originally developed by Ctrip.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - Configuration Management
   - Microservices
+  - Distributed Systems
+  - Java
+  - Real-Time Configuration
+  - Ctrip
+  - Open Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -15,14 +24,36 @@ apis:
   - aid: apollo-config:apollo-config
     name: Apollo Config
     description: >-
-      Apollo is a reliable configuration management system for distributed systems from Ctrip providing centralized config management and real-time updates.
-    humanURL: https://github.com/api-evangelist/apollo-config
+      Apollo is a reliable, open-source configuration management system suitable
+      for microservice configuration management scenarios, providing centralized
+      configuration management, real-time updates, versioning, and
+      multi-environment support.
+    humanURL: https://www.apolloconfig.com/
     tags:
+      - Configuration Management
       - Microservices
+      - Distributed Systems
+      - Java
+      - Real-Time Configuration
+      - Open Source
     properties: []
 common:
   - type: Website
-    url: https://github.com/api-evangelist/apollo-config
+    url: https://www.apolloconfig.com/
+  - type: Documentation
+    url: https://www.apolloconfig.com/#/en/
+  - type: GitHub
+    url: https://github.com/apolloconfig/apollo
+  - type: GitHub Org
+    url: https://github.com/apolloconfig
+  - type: Wiki
+    url: https://github.com/apolloconfig/apollo/wiki
+  - type: Getting Started
+    url: https://www.apolloconfig.com/#/en/deployment/quick-start
+  - type: Issues
+    url: https://github.com/apolloconfig/apollo/issues
+  - type: Releases
+    url: https://github.com/apolloconfig/apollo/releases
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
