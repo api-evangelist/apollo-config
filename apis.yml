@@ -9,12 +9,12 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Configuration Management
-  - Microservices
+  - Ctrip
   - Distributed Systems
   - Java
-  - Real-Time Configuration
-  - Ctrip
+  - Microservices
   - Open Source
+  - Real-Time Configuration
 url: >-
   https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -31,11 +31,11 @@ apis:
     humanURL: https://www.apolloconfig.com/
     tags:
       - Configuration Management
-      - Microservices
       - Distributed Systems
       - Java
-      - Real-Time Configuration
+      - Microservices
       - Open Source
+      - Real-Time Configuration
     baseURL: http://localhost:8070
     properties:
       - type: Documentation
