@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-structure/apollo-open-api-release-structure.json",
+  "name": "Release",
+  "description": "Release schema from Apollo Config Open API",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "int64"
+    },
+    "appId": {
+      "type": "string"
+    },
+    "clusterName": {
+      "type": "string"
+    },
+    "namespaceName": {
+      "type": "string"
+    },
+    "name": {
+      "description": "Release title",
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "isAbandoned": {
+      "type": "boolean"
+    },
+    "configurations": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Key-value configuration snapshot at release time",
+      "type": "object"
+    },
+    "dataChangeCreatedBy": {
+      "type": "string"
+    },
+    "dataChangeLastModifiedBy": {
+      "type": "string"
+    },
+    "dataChangeCreatedTime": {
+      "type": "datetime"
+    },
+    "dataChangeLastModifiedTime": {
+      "type": "datetime"
+    }
+  }
+}

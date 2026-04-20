@@ -1,0 +1,13 @@
+{
+  "appId": "sample-app-001",
+  "clusterName": "sample-name",
+  "namespaceName": "sample-name",
+  "comment": "Sample configuration item",
+  "format": "properties",
+  "isPublic": false,
+  "items": [],
+  "dataChangeCreatedBy": "operator",
+  "dataChangeLastModifiedBy": "operator",
+  "dataChangeCreatedTime": "2025-03-15T14:30:00Z",
+  "dataChangeLastModifiedTime": "2025-03-15T14:30:00Z"
+}

@@ -1,0 +1,104 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "apollo": "https://apolloconfig.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "App": "apollo:App",
+    "Namespace": "apollo:Namespace",
+    "Item": "apollo:Item",
+    "Cluster": "apollo:Cluster",
+    "Release": "apollo:Release",
+    "name": "schema:name",
+    "appId": {
+      "@id": "apollo:appId",
+      "@type": "xsd:string"
+    },
+    "orgId": {
+      "@id": "apollo:orgId",
+      "@type": "xsd:string"
+    },
+    "orgName": {
+      "@id": "apollo:orgName",
+      "@type": "xsd:string"
+    },
+    "ownerName": {
+      "@id": "apollo:ownerName",
+      "@type": "xsd:string"
+    },
+    "ownerEmail": {
+      "@id": "apollo:ownerEmail",
+      "@type": "xsd:string"
+    },
+    "dataChangeCreatedBy": {
+      "@id": "apollo:dataChangeCreatedBy",
+      "@type": "xsd:string"
+    },
+    "dataChangeLastModifiedBy": {
+      "@id": "apollo:dataChangeLastModifiedBy",
+      "@type": "xsd:string"
+    },
+    "dataChangeCreatedTime": {
+      "@id": "apollo:dataChangeCreatedTime",
+      "@type": "xsd:dateTime"
+    },
+    "dataChangeLastModifiedTime": {
+      "@id": "apollo:dataChangeLastModifiedTime",
+      "@type": "xsd:dateTime"
+    },
+    "clusterName": {
+      "@id": "apollo:clusterName",
+      "@type": "xsd:string"
+    },
+    "namespaceName": {
+      "@id": "apollo:namespaceName",
+      "@type": "xsd:string"
+    },
+    "comment": {
+      "@id": "apollo:comment",
+      "@type": "xsd:string"
+    },
+    "format": {
+      "@id": "apollo:format",
+      "@type": "xsd:string"
+    },
+    "isPublic": {
+      "@id": "apollo:isPublic",
+      "@type": "xsd:boolean"
+    },
+    "items": {
+      "@id": "apollo:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "apollo:id",
+      "@type": "xsd:integer"
+    },
+    "namespaceId": {
+      "@id": "apollo:namespaceId",
+      "@type": "xsd:integer"
+    },
+    "key": {
+      "@id": "apollo:key",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "apollo:value",
+      "@type": "xsd:string"
+    },
+    "lineNum": {
+      "@id": "apollo:lineNum",
+      "@type": "xsd:integer"
+    },
+    "isAbandoned": {
+      "@id": "apollo:isAbandoned",
+      "@type": "xsd:boolean"
+    },
+    "configurations": {
+      "@id": "apollo:configurations",
+      "@type": "@id"
+    }
+  }
+}

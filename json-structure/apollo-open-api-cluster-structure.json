@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-structure/apollo-open-api-cluster-structure.json",
+  "name": "Cluster",
+  "description": "Cluster schema from Apollo Config Open API",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "appId": {
+      "type": "string"
+    },
+    "dataChangeCreatedBy": {
+      "type": "string"
+    },
+    "dataChangeLastModifiedBy": {
+      "type": "string"
+    },
+    "dataChangeCreatedTime": {
+      "type": "datetime"
+    },
+    "dataChangeLastModifiedTime": {
+      "type": "datetime"
+    }
+  }
+}

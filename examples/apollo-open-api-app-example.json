@@ -1,0 +1,12 @@
+{
+  "name": "sample-name",
+  "appId": "sample-app-001",
+  "orgId": "sample-app-001",
+  "orgName": "sample-name",
+  "ownerName": "sample-name",
+  "ownerEmail": "operator@example.com",
+  "dataChangeCreatedBy": "operator",
+  "dataChangeLastModifiedBy": "operator",
+  "dataChangeCreatedTime": "2025-03-15T14:30:00Z",
+  "dataChangeLastModifiedTime": "2025-03-15T14:30:00Z"
+}

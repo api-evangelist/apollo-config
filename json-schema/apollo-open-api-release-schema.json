@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-release-schema.json",
+  "title": "Release",
+  "description": "Release schema from Apollo Config Open API",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "appId": {
+      "type": "string"
+    },
+    "clusterName": {
+      "type": "string"
+    },
+    "namespaceName": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "Release title"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "isAbandoned": {
+      "type": "boolean"
+    },
+    "configurations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Key-value configuration snapshot at release time"
+    },
+    "dataChangeCreatedBy": {
+      "type": "string"
+    },
+    "dataChangeLastModifiedBy": {
+      "type": "string"
+    },
+    "dataChangeCreatedTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dataChangeLastModifiedTime": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

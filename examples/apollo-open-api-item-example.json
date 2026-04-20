@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "namespaceId": 1,
+  "key": "timeout",
+  "value": "30000",
+  "comment": "Sample configuration item",
+  "lineNum": 1,
+  "dataChangeCreatedBy": "operator",
+  "dataChangeLastModifiedBy": "operator",
+  "dataChangeCreatedTime": "2025-03-15T14:30:00Z",
+  "dataChangeLastModifiedTime": "2025-03-15T14:30:00Z"
+}

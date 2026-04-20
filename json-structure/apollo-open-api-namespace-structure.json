@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-structure/apollo-open-api-namespace-structure.json",
+  "name": "Namespace",
+  "description": "Namespace schema from Apollo Config Open API",
+  "type": "object",
+  "properties": {
+    "appId": {
+      "type": "string"
+    },
+    "clusterName": {
+      "type": "string"
+    },
+    "namespaceName": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "format": {
+      "enum": [
+        "properties",
+        "xml",
+        "json",
+        "yml",
+        "yaml",
+        "txt"
+      ],
+      "type": "string"
+    },
+    "isPublic": {
+      "type": "boolean"
+    },
+    "items": {
+      "items": {
+        "$ref": "#/components/schemas/Item"
+      },
+      "type": "array"
+    },
+    "dataChangeCreatedBy": {
+      "type": "string"
+    },
+    "dataChangeLastModifiedBy": {
+      "type": "string"
+    },
+    "dataChangeCreatedTime": {
+      "type": "datetime"
+    },
+    "dataChangeLastModifiedTime": {
+      "type": "datetime"
+    }
+  }
+}

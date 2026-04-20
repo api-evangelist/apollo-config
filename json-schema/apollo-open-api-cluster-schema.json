@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-cluster-schema.json",
+  "title": "Cluster",
+  "description": "Cluster schema from Apollo Config Open API",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "appId": {
+      "type": "string"
+    },
+    "dataChangeCreatedBy": {
+      "type": "string"
+    },
+    "dataChangeLastModifiedBy": {
+      "type": "string"
+    },
+    "dataChangeCreatedTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dataChangeLastModifiedTime": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
