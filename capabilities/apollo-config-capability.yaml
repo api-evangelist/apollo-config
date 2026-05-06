@@ -1,0 +1,667 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apollo Config Open API
+  description: Apollo Open API for configuration management including app management, namespace management, configuration
+    publishing, and release management. Apollo provides centralized configuration management for distributed systems with
+    real-time push, versioning, and gray release support.
+  tags:
+  - Apollo
+  - Config
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: apollo-config
+    baseUri: http://localhost:8070
+    description: Apollo Config Open API HTTP API.
+    authentication:
+      type: apikey
+      in: header
+      name: Authorization
+      value: '{{APOLLO_CONFIG_TOKEN}}'
+    resources:
+    - name: openapi-v1-apps
+      path: /openapi/v1/apps
+      operations:
+      - name: listapps
+        method: GET
+        description: List all apps
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-apps-appid
+      path: /openapi/v1/apps/{appId}
+      operations:
+      - name: getapp
+        method: GET
+        description: Get app info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-apps-appid-envclusters
+      path: /openapi/v1/apps/{appId}/envclusters
+      operations:
+      - name: getenvclusters
+        method: GET
+        description: Get environments and clusters
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appid-clusters-clustern
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}
+      operations:
+      - name: getcluster
+        method: GET
+        description: Get cluster info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcluster
+        method: POST
+        description: Create a cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appid-clusters-clustern
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces
+      operations:
+      - name: listnamespaces
+        method: GET
+        description: List namespaces
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createnamespace
+        method: POST
+        description: Create a namespace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appid-clusters-clustern
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}
+      operations:
+      - name: getnamespace
+        method: GET
+        description: Get namespace info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appid-clusters-clustern
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/lock
+      operations:
+      - name: getnamespacelock
+        method: GET
+        description: Get namespace lock info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appid-clusters-clustern
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/items
+      operations:
+      - name: listitems
+        method: GET
+        description: List configuration items
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createitem
+        method: POST
+        description: Create a configuration item
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appid-clusters-clustern
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/items/{key}
+      operations:
+      - name: getitem
+        method: GET
+        description: Get a configuration item
+        inputParameters:
+        - name: key
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateitem
+        method: PUT
+        description: Update a configuration item
+        inputParameters:
+        - name: key
+          in: path
+          type: string
+          required: true
+        - name: createIfNotExists
+          in: query
+          type: boolean
+          description: Create item if it does not exist
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteitem
+        method: DELETE
+        description: Delete a configuration item
+        inputParameters:
+        - name: key
+          in: path
+          type: string
+          required: true
+        - name: operator
+          in: query
+          type: string
+          required: true
+          description: Operator (user) performing the delete
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appid-clusters-clustern
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/releases/latest
+      operations:
+      - name: getlatestrelease
+        method: GET
+        description: Get latest release
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appid-clusters-clustern
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/releases
+      operations:
+      - name: createrelease
+        method: POST
+        description: Publish a release
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-releases-releaseid-rollback
+      path: /openapi/v1/envs/{env}/releases/{releaseId}/rollback
+      operations:
+      - name: rollbackrelease
+        method: PUT
+        description: Rollback a release
+        inputParameters:
+        - name: releaseId
+          in: path
+          type: integer
+          required: true
+        - name: operator
+          in: query
+          type: string
+          required: true
+          description: Operator performing the rollback
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appid-clusters-clustern
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/gray-del-releases
+      operations:
+      - name: creategrayrelease
+        method: POST
+        description: Create a gray release
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: apollo-config-rest
+    description: REST adapter for Apollo Config Open API.
+    resources:
+    - path: /openapi/v1/apps
+      name: listapps
+      operations:
+      - method: GET
+        name: listapps
+        description: List all apps
+        call: apollo-config.listapps
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/apps/{appId}
+      name: getapp
+      operations:
+      - method: GET
+        name: getapp
+        description: Get app info
+        call: apollo-config.getapp
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/apps/{appId}/envclusters
+      name: getenvclusters
+      operations:
+      - method: GET
+        name: getenvclusters
+        description: Get environments and clusters
+        call: apollo-config.getenvclusters
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}
+      name: getcluster
+      operations:
+      - method: GET
+        name: getcluster
+        description: Get cluster info
+        call: apollo-config.getcluster
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}
+      name: createcluster
+      operations:
+      - method: POST
+        name: createcluster
+        description: Create a cluster
+        call: apollo-config.createcluster
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces
+      name: listnamespaces
+      operations:
+      - method: GET
+        name: listnamespaces
+        description: List namespaces
+        call: apollo-config.listnamespaces
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces
+      name: createnamespace
+      operations:
+      - method: POST
+        name: createnamespace
+        description: Create a namespace
+        call: apollo-config.createnamespace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}
+      name: getnamespace
+      operations:
+      - method: GET
+        name: getnamespace
+        description: Get namespace info
+        call: apollo-config.getnamespace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/lock
+      name: getnamespacelock
+      operations:
+      - method: GET
+        name: getnamespacelock
+        description: Get namespace lock info
+        call: apollo-config.getnamespacelock
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/items
+      name: listitems
+      operations:
+      - method: GET
+        name: listitems
+        description: List configuration items
+        call: apollo-config.listitems
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/items
+      name: createitem
+      operations:
+      - method: POST
+        name: createitem
+        description: Create a configuration item
+        call: apollo-config.createitem
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/items/{key}
+      name: getitem
+      operations:
+      - method: GET
+        name: getitem
+        description: Get a configuration item
+        call: apollo-config.getitem
+        with:
+          key: rest.key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/items/{key}
+      name: updateitem
+      operations:
+      - method: PUT
+        name: updateitem
+        description: Update a configuration item
+        call: apollo-config.updateitem
+        with:
+          key: rest.key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/items/{key}
+      name: deleteitem
+      operations:
+      - method: DELETE
+        name: deleteitem
+        description: Delete a configuration item
+        call: apollo-config.deleteitem
+        with:
+          key: rest.key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/releases/latest
+      name: getlatestrelease
+      operations:
+      - method: GET
+        name: getlatestrelease
+        description: Get latest release
+        call: apollo-config.getlatestrelease
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/releases
+      name: createrelease
+      operations:
+      - method: POST
+        name: createrelease
+        description: Publish a release
+        call: apollo-config.createrelease
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/releases/{releaseId}/rollback
+      name: rollbackrelease
+      operations:
+      - method: PUT
+        name: rollbackrelease
+        description: Rollback a release
+        call: apollo-config.rollbackrelease
+        with:
+          releaseId: rest.releaseId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/gray-del-releases
+      name: creategrayrelease
+      operations:
+      - method: POST
+        name: creategrayrelease
+        description: Create a gray release
+        call: apollo-config.creategrayrelease
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: apollo-config-mcp
+    transport: http
+    description: MCP adapter for Apollo Config Open API for AI agent use.
+    tools:
+    - name: listapps
+      description: List all apps
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.listapps
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getapp
+      description: Get app info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.getapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getenvclusters
+      description: Get environments and clusters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.getenvclusters
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcluster
+      description: Get cluster info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.getcluster
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcluster
+      description: Create a cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apollo-config.createcluster
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listnamespaces
+      description: List namespaces
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.listnamespaces
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createnamespace
+      description: Create a namespace
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apollo-config.createnamespace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getnamespace
+      description: Get namespace info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.getnamespace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getnamespacelock
+      description: Get namespace lock info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.getnamespacelock
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listitems
+      description: List configuration items
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.listitems
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createitem
+      description: Create a configuration item
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apollo-config.createitem
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getitem
+      description: Get a configuration item
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.getitem
+      with:
+        key: tools.key
+      inputParameters:
+      - name: key
+        type: string
+        description: key
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateitem
+      description: Update a configuration item
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: apollo-config.updateitem
+      with:
+        key: tools.key
+        createIfNotExists: tools.createIfNotExists
+      inputParameters:
+      - name: key
+        type: string
+        description: key
+        required: true
+      - name: createIfNotExists
+        type: boolean
+        description: Create item if it does not exist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteitem
+      description: Delete a configuration item
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: apollo-config.deleteitem
+      with:
+        key: tools.key
+        operator: tools.operator
+      inputParameters:
+      - name: key
+        type: string
+        description: key
+        required: true
+      - name: operator
+        type: string
+        description: Operator (user) performing the delete
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getlatestrelease
+      description: Get latest release
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-config.getlatestrelease
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createrelease
+      description: Publish a release
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apollo-config.createrelease
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: rollbackrelease
+      description: Rollback a release
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: apollo-config.rollbackrelease
+      with:
+        releaseId: tools.releaseId
+        operator: tools.operator
+      inputParameters:
+      - name: releaseId
+        type: integer
+        description: releaseId
+        required: true
+      - name: operator
+        type: string
+        description: Operator performing the rollback
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creategrayrelease
+      description: Create a gray release
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apollo-config.creategrayrelease
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    APOLLO_CONFIG_TOKEN: APOLLO_CONFIG_TOKEN
