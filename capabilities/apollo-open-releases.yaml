@@ -1,0 +1,204 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apollo Config Open API — Releases
+  description: 'Apollo Config Open API — Releases. 4 operations. Lead operation: Create a gray release. Self-contained Naftiko
+    capability covering one Apollo Config business surface.'
+  tags:
+  - Apollo Config
+  - Releases
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APOLLO_CONFIG_API_KEY: APOLLO_CONFIG_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: apollo-open-releases
+    baseUri: http://localhost:8070
+    description: Apollo Config Open API — Releases business capability. Self-contained, no shared references.
+    resources:
+    - name: openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName-gra
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/gray-del-releases
+      operations:
+      - name: creategrayrelease
+        method: POST
+        description: Create a gray release
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName-rel
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/releases
+      operations:
+      - name: createrelease
+        method: POST
+        description: Publish a release
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName-rel
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/releases/latest
+      operations:
+      - name: getlatestrelease
+        method: GET
+        description: Get latest release
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-releases-releaseId-rollback
+      path: /openapi/v1/envs/{env}/releases/{releaseId}/rollback
+      operations:
+      - name: rollbackrelease
+        method: PUT
+        description: Rollback a release
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: releaseId
+          in: path
+          type: integer
+          required: true
+        - name: operator
+          in: query
+          type: string
+          description: Operator performing the rollback
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.APOLLO_CONFIG_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: apollo-open-releases-rest
+    port: 8080
+    description: REST adapter for Apollo Config Open API — Releases. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/openapi/v1/envs/{env}/apps/{appid}/clusters/{clustername}/namespaces/{namespacename}/gray-del-releases
+      name: openapi-v1-envs-env-apps-appid-clusters-clustername-namespaces-namespacename-gra
+      description: REST surface for openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName-gra.
+      operations:
+      - method: POST
+        name: creategrayrelease
+        description: Create a gray release
+        call: apollo-open-releases.creategrayrelease
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/openapi/v1/envs/{env}/apps/{appid}/clusters/{clustername}/namespaces/{namespacename}/releases
+      name: openapi-v1-envs-env-apps-appid-clusters-clustername-namespaces-namespacename-rel
+      description: REST surface for openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName-rel.
+      operations:
+      - method: POST
+        name: createrelease
+        description: Publish a release
+        call: apollo-open-releases.createrelease
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/openapi/v1/envs/{env}/apps/{appid}/clusters/{clustername}/namespaces/{namespacename}/releases/latest
+      name: openapi-v1-envs-env-apps-appid-clusters-clustername-namespaces-namespacename-rel
+      description: REST surface for openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName-rel.
+      operations:
+      - method: GET
+        name: getlatestrelease
+        description: Get latest release
+        call: apollo-open-releases.getlatestrelease
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/openapi/v1/envs/{env}/releases/{releaseid}/rollback
+      name: openapi-v1-envs-env-releases-releaseid-rollback
+      description: REST surface for openapi-v1-envs-env-releases-releaseId-rollback.
+      operations:
+      - method: PUT
+        name: rollbackrelease
+        description: Rollback a release
+        call: apollo-open-releases.rollbackrelease
+        with:
+          releaseId: rest.releaseId
+          operator: rest.operator
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: apollo-open-releases-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apollo Config Open API — Releases. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: create-gray-release
+      description: Create a gray release
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apollo-open-releases.creategrayrelease
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: publish-release
+      description: Publish a release
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apollo-open-releases.createrelease
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-latest-release
+      description: Get latest release
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-open-releases.getlatestrelease
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: rollback-release
+      description: Rollback a release
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: apollo-open-releases.rollbackrelease
+      with:
+        releaseId: tools.releaseId
+        operator: tools.operator
+      outputParameters:
+      - type: object
+        mapping: $.

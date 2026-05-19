@@ -1,0 +1,171 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apollo Config Open API — Namespaces
+  description: 'Apollo Config Open API — Namespaces. 4 operations. Lead operation: List namespaces. Self-contained Naftiko
+    capability covering one Apollo Config business surface.'
+  tags:
+  - Apollo Config
+  - Namespaces
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APOLLO_CONFIG_API_KEY: APOLLO_CONFIG_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: apollo-open-namespaces
+    baseUri: http://localhost:8070
+    description: Apollo Config Open API — Namespaces business capability. Self-contained, no shared references.
+    resources:
+    - name: openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces
+      operations:
+      - name: listnamespaces
+        method: GET
+        description: List namespaces
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createnamespace
+        method: POST
+        description: Create a namespace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}
+      operations:
+      - name: getnamespace
+        method: GET
+        description: Get namespace info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName-loc
+      path: /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/lock
+      operations:
+      - name: getnamespacelock
+        method: GET
+        description: Get namespace lock info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.APOLLO_CONFIG_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: apollo-open-namespaces-rest
+    port: 8080
+    description: REST adapter for Apollo Config Open API — Namespaces. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/openapi/v1/envs/{env}/apps/{appid}/clusters/{clustername}/namespaces
+      name: openapi-v1-envs-env-apps-appid-clusters-clustername-namespaces
+      description: REST surface for openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces.
+      operations:
+      - method: GET
+        name: listnamespaces
+        description: List namespaces
+        call: apollo-open-namespaces.listnamespaces
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createnamespace
+        description: Create a namespace
+        call: apollo-open-namespaces.createnamespace
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/openapi/v1/envs/{env}/apps/{appid}/clusters/{clustername}/namespaces/{namespacename}
+      name: openapi-v1-envs-env-apps-appid-clusters-clustername-namespaces-namespacename
+      description: REST surface for openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName.
+      operations:
+      - method: GET
+        name: getnamespace
+        description: Get namespace info
+        call: apollo-open-namespaces.getnamespace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/openapi/v1/envs/{env}/apps/{appid}/clusters/{clustername}/namespaces/{namespacename}/lock
+      name: openapi-v1-envs-env-apps-appid-clusters-clustername-namespaces-namespacename-loc
+      description: REST surface for openapi-v1-envs-env-apps-appId-clusters-clusterName-namespaces-namespaceName-loc.
+      operations:
+      - method: GET
+        name: getnamespacelock
+        description: Get namespace lock info
+        call: apollo-open-namespaces.getnamespacelock
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: apollo-open-namespaces-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apollo Config Open API — Namespaces. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-namespaces
+      description: List namespaces
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-open-namespaces.listnamespaces
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-namespace
+      description: Create a namespace
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apollo-open-namespaces.createnamespace
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-namespace-info
+      description: Get namespace info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-open-namespaces.getnamespace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-namespace-lock-info
+      description: Get namespace lock info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apollo-open-namespaces.getnamespacelock
+      outputParameters:
+      - type: object
+        mapping: $.
