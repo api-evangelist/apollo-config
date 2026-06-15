@@ -1,0 +1,3224 @@
+{
+  "item": [
+    {
+      "id": "79c4c30e-da5c-4f49-b6fa-28bdaf1eaa2f",
+      "name": "Apps",
+      "description": {
+        "content": "Application management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "39bd718f-8bdf-427c-b4f8-08b259e9c267",
+          "name": "List all apps",
+          "request": {
+            "name": "List all apps",
+            "description": {
+              "content": "Returns a list of all registered applications.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "apps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "974d5975-45ff-400a-8a71-19c7ecc79dc4",
+              "name": "List of applications",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"appId\": \"string\",\n    \"orgId\": \"string\",\n    \"orgName\": \"string\",\n    \"ownerName\": \"string\",\n    \"ownerEmail\": \"string\",\n    \"dataChangeCreatedBy\": \"string\",\n    \"dataChangeLastModifiedBy\": \"string\",\n    \"dataChangeCreatedTime\": \"1985-09-04T17:54:58.292Z\",\n    \"dataChangeLastModifiedTime\": \"1987-02-01T22:18:53.421Z\"\n  },\n  {\n    \"name\": \"string\",\n    \"appId\": \"string\",\n    \"orgId\": \"string\",\n    \"orgName\": \"string\",\n    \"ownerName\": \"string\",\n    \"ownerEmail\": \"string\",\n    \"dataChangeCreatedBy\": \"string\",\n    \"dataChangeLastModifiedBy\": \"string\",\n    \"dataChangeCreatedTime\": \"2005-09-08T06:10:34.193Z\",\n    \"dataChangeLastModifiedTime\": \"1996-12-28T22:11:33.635Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9bbaffa8-0450-4cf5-83c8-c1f2f7c16caa",
+          "name": "Get app info",
+          "request": {
+            "name": "Get app info",
+            "description": {
+              "content": "Returns information about a specific application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "apps",
+                ":appId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf8713bc-22d4-4b2c-abf2-f06ae1c6c057",
+              "name": "Application info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"appId\": \"string\",\n  \"orgId\": \"string\",\n  \"orgName\": \"string\",\n  \"ownerName\": \"string\",\n  \"ownerEmail\": \"string\",\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"1968-09-13T20:14:58.391Z\",\n  \"dataChangeLastModifiedTime\": \"1973-06-19T13:33:27.226Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5dd78316-aa10-49d9-ad84-5515ec6b996c",
+              "name": "App not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ea9cb313-1609-4627-987c-6ec2c658df0e",
+      "name": "Clusters",
+      "description": {
+        "content": "Cluster management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "81ca7e8a-9597-4129-bb3c-f1f3c223de26",
+          "name": "Get environments and clusters",
+          "request": {
+            "name": "Get environments and clusters",
+            "description": {
+              "content": "Returns all environments and clusters for an application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "apps",
+                ":appId",
+                "envclusters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8519433f-8eba-4e93-aa84-422d9d546d54",
+              "name": "Environments and clusters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "apps",
+                    ":appId",
+                    "envclusters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"env\": \"string\",\n    \"clusters\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"env\": \"string\",\n    \"clusters\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b2070bc-0b28-487b-9416-aa386ff7a8ef",
+          "name": "Get cluster info",
+          "request": {
+            "name": "Get cluster info",
+            "description": {
+              "content": "Returns information about a specific cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2af606e-d577-4c97-8043-47987aca3481",
+              "name": "Cluster info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"appId\": \"string\",\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"1998-09-14T18:01:27.781Z\",\n  \"dataChangeLastModifiedTime\": \"2023-02-04T08:36:48.616Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4917eb1f-3759-4262-aed8-d27c0ace4ad6",
+              "name": "Cluster not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f4c9c17e-0dcc-4edb-9ef7-4548bc4fa411",
+          "name": "Create a cluster",
+          "request": {
+            "name": "Create a cluster",
+            "description": {
+              "content": "Creates a new cluster for an application in an environment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ebdbba0e-8967-48e4-947f-ecad3734dd86",
+              "name": "Cluster created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"appId\": \"string\",\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"1998-09-14T18:01:27.781Z\",\n  \"dataChangeLastModifiedTime\": \"2023-02-04T08:36:48.616Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7b1d4101-0600-4572-ae29-6cb6c7269266",
+      "name": "Namespaces",
+      "description": {
+        "content": "Namespace management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d77207b2-7870-4ddc-97d5-73957c938b54",
+          "name": "List namespaces",
+          "request": {
+            "name": "List namespaces",
+            "description": {
+              "content": "Returns all namespaces for an app/env/cluster combination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4794594a-9f59-4971-92ed-7c33eeedc90c",
+              "name": "List of namespaces",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"appId\": \"string\",\n    \"clusterName\": \"string\",\n    \"namespaceName\": \"string\",\n    \"comment\": \"string\",\n    \"format\": \"properties\",\n    \"isPublic\": false,\n    \"items\": [\n      {\n        \"id\": 4133,\n        \"namespaceId\": 5063,\n        \"key\": \"string\",\n        \"value\": \"string\",\n        \"comment\": \"string\",\n        \"lineNum\": 1905,\n        \"dataChangeCreatedBy\": \"string\",\n        \"dataChangeLastModifiedBy\": \"string\",\n        \"dataChangeCreatedTime\": \"1955-09-20T05:10:11.208Z\",\n        \"dataChangeLastModifiedTime\": \"1972-10-25T23:32:30.357Z\"\n      },\n      {\n        \"id\": 2367,\n        \"namespaceId\": 6284,\n        \"key\": \"string\",\n        \"value\": \"string\",\n        \"comment\": \"string\",\n        \"lineNum\": 127,\n        \"dataChangeCreatedBy\": \"string\",\n        \"dataChangeLastModifiedBy\": \"string\",\n        \"dataChangeCreatedTime\": \"1969-08-10T08:28:08.413Z\",\n        \"dataChangeLastModifiedTime\": \"1978-01-01T21:47:25.559Z\"\n      }\n    ],\n    \"dataChangeCreatedBy\": \"string\",\n    \"dataChangeLastModifiedBy\": \"string\",\n    \"dataChangeCreatedTime\": \"2023-12-19T02:32:24.180Z\",\n    \"dataChangeLastModifiedTime\": \"1979-09-03T03:12:34.386Z\"\n  },\n  {\n    \"appId\": \"string\",\n    \"clusterName\": \"string\",\n    \"namespaceName\": \"string\",\n    \"comment\": \"string\",\n    \"format\": \"yaml\",\n    \"isPublic\": false,\n    \"items\": [\n      {\n        \"id\": 6209,\n        \"namespaceId\": 8248,\n        \"key\": \"string\",\n        \"value\": \"string\",\n        \"comment\": \"string\",\n        \"lineNum\": 9757,\n        \"dataChangeCreatedBy\": \"string\",\n        \"dataChangeLastModifiedBy\": \"string\",\n        \"dataChangeCreatedTime\": \"1979-10-10T17:07:09.508Z\",\n        \"dataChangeLastModifiedTime\": \"2015-06-14T06:20:56.970Z\"\n      },\n      {\n        \"id\": 5301,\n        \"namespaceId\": 3878,\n        \"key\": \"string\",\n        \"value\": \"string\",\n        \"comment\": \"string\",\n        \"lineNum\": 1051,\n        \"dataChangeCreatedBy\": \"string\",\n        \"dataChangeLastModifiedBy\": \"string\",\n        \"dataChangeCreatedTime\": \"1979-03-16T14:02:46.272Z\",\n        \"dataChangeLastModifiedTime\": \"2012-10-05T22:46:23.746Z\"\n      }\n    ],\n    \"dataChangeCreatedBy\": \"string\",\n    \"dataChangeLastModifiedBy\": \"string\",\n    \"dataChangeCreatedTime\": \"2020-01-06T15:00:05.720Z\",\n    \"dataChangeLastModifiedTime\": \"1983-12-24T04:44:43.508Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d094225d-0208-42f9-95c3-5362b8f0de4a",
+          "name": "Create a namespace",
+          "request": {
+            "name": "Create a namespace",
+            "description": {
+              "content": "Creates a new namespace (app-level namespace definition).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"namespaceName\": \"<string>\",\n  \"format\": \"<string>\",\n  \"isPublic\": \"<boolean>\",\n  \"comment\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2f6e988e-5eef-48b3-9712-f315aecb6ab6",
+              "name": "Namespace created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"namespaceName\": \"<string>\",\n  \"format\": \"<string>\",\n  \"isPublic\": \"<boolean>\",\n  \"comment\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"appId\": \"string\",\n  \"clusterName\": \"string\",\n  \"namespaceName\": \"string\",\n  \"comment\": \"string\",\n  \"format\": \"yaml\",\n  \"isPublic\": true,\n  \"items\": [\n    {\n      \"id\": 8075,\n      \"namespaceId\": 2431,\n      \"key\": \"string\",\n      \"value\": \"string\",\n      \"comment\": \"string\",\n      \"lineNum\": 5045,\n      \"dataChangeCreatedBy\": \"string\",\n      \"dataChangeLastModifiedBy\": \"string\",\n      \"dataChangeCreatedTime\": \"1951-05-19T04:09:49.980Z\",\n      \"dataChangeLastModifiedTime\": \"1979-11-16T16:02:38.022Z\"\n    },\n    {\n      \"id\": 6036,\n      \"namespaceId\": 9163,\n      \"key\": \"string\",\n      \"value\": \"string\",\n      \"comment\": \"string\",\n      \"lineNum\": 9701,\n      \"dataChangeCreatedBy\": \"string\",\n      \"dataChangeLastModifiedBy\": \"string\",\n      \"dataChangeCreatedTime\": \"2026-01-07T05:36:10.005Z\",\n      \"dataChangeLastModifiedTime\": \"1947-06-05T01:45:32.293Z\"\n    }\n  ],\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"1949-07-26T07:41:55.101Z\",\n  \"dataChangeLastModifiedTime\": \"1980-02-02T05:45:08.568Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c6829dc-3e48-4dcd-9a33-f64b9b58930a",
+          "name": "Get namespace info",
+          "request": {
+            "name": "Get namespace info",
+            "description": {
+              "content": "Returns information about a specific namespace including items.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc483267-0b79-49e9-958e-0bf4732220e9",
+              "name": "Namespace info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"appId\": \"string\",\n  \"clusterName\": \"string\",\n  \"namespaceName\": \"string\",\n  \"comment\": \"string\",\n  \"format\": \"yaml\",\n  \"isPublic\": true,\n  \"items\": [\n    {\n      \"id\": 8075,\n      \"namespaceId\": 2431,\n      \"key\": \"string\",\n      \"value\": \"string\",\n      \"comment\": \"string\",\n      \"lineNum\": 5045,\n      \"dataChangeCreatedBy\": \"string\",\n      \"dataChangeLastModifiedBy\": \"string\",\n      \"dataChangeCreatedTime\": \"1951-05-19T04:09:49.980Z\",\n      \"dataChangeLastModifiedTime\": \"1979-11-16T16:02:38.022Z\"\n    },\n    {\n      \"id\": 6036,\n      \"namespaceId\": 9163,\n      \"key\": \"string\",\n      \"value\": \"string\",\n      \"comment\": \"string\",\n      \"lineNum\": 9701,\n      \"dataChangeCreatedBy\": \"string\",\n      \"dataChangeLastModifiedBy\": \"string\",\n      \"dataChangeCreatedTime\": \"2026-01-07T05:36:10.005Z\",\n      \"dataChangeLastModifiedTime\": \"1947-06-05T01:45:32.293Z\"\n    }\n  ],\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"1949-07-26T07:41:55.101Z\",\n  \"dataChangeLastModifiedTime\": \"1980-02-02T05:45:08.568Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "81e111d1-b608-42b1-84ad-c3cb9e9aad9b",
+              "name": "Namespace not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b395f1e-2ecf-49cc-a714-48815a5f72c0",
+          "name": "Get namespace lock info",
+          "request": {
+            "name": "Get namespace lock info",
+            "description": {
+              "content": "Returns lock information for a namespace (who modified it last).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName",
+                "lock"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "503f9c3d-68e1-48e9-b2a9-10782c1aebc6",
+              "name": "Lock info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "lock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"namespaceName\": \"string\",\n  \"isLocked\": true,\n  \"lockedBy\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a4292c33-a2c0-4221-9e12-b81c318d530b",
+      "name": "Items",
+      "description": {
+        "content": "Configuration item management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "92a84f41-c8e2-4756-b019-272715b12a03",
+          "name": "List configuration items",
+          "request": {
+            "name": "List configuration items",
+            "description": {
+              "content": "Returns all configuration items in a namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName",
+                "items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5fa875d2-16cd-4d76-a7c1-9714bc0ebe9c",
+              "name": "Configuration items",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 9418,\n    \"namespaceId\": 5384,\n    \"key\": \"string\",\n    \"value\": \"string\",\n    \"comment\": \"string\",\n    \"lineNum\": 6088,\n    \"dataChangeCreatedBy\": \"string\",\n    \"dataChangeLastModifiedBy\": \"string\",\n    \"dataChangeCreatedTime\": \"1965-08-14T10:56:33.812Z\",\n    \"dataChangeLastModifiedTime\": \"1961-01-04T20:51:03.175Z\"\n  },\n  {\n    \"id\": 1930,\n    \"namespaceId\": 7653,\n    \"key\": \"string\",\n    \"value\": \"string\",\n    \"comment\": \"string\",\n    \"lineNum\": 4103,\n    \"dataChangeCreatedBy\": \"string\",\n    \"dataChangeLastModifiedBy\": \"string\",\n    \"dataChangeCreatedTime\": \"1997-03-15T17:20:55.615Z\",\n    \"dataChangeLastModifiedTime\": \"1958-12-28T06:41:43.016Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40e6f607-145c-49b0-bfec-435cbfe8c6d2",
+          "name": "Create a configuration item",
+          "request": {
+            "name": "Create a configuration item",
+            "description": {
+              "content": "Creates a new key-value configuration item in a namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName",
+                "items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key\": \"<string>\",\n  \"value\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\",\n  \"comment\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d070ec77-dae2-4b71-93f3-ad318826d3c0",
+              "name": "Item created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key\": \"<string>\",\n  \"value\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\",\n  \"comment\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1997,\n  \"namespaceId\": 7402,\n  \"key\": \"string\",\n  \"value\": \"string\",\n  \"comment\": \"string\",\n  \"lineNum\": 2818,\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"1977-10-13T10:43:55.225Z\",\n  \"dataChangeLastModifiedTime\": \"1976-06-12T14:06:35.014Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ec0ab101-336e-4fa2-9f56-9fd9ffd3b804",
+              "name": "Item already exists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key\": \"<string>\",\n  \"value\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\",\n  \"comment\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e5c9e8b9-8490-4805-910e-fcd85c3b9161",
+          "name": "Get a configuration item",
+          "request": {
+            "name": "Get a configuration item",
+            "description": {},
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName",
+                "items",
+                ":key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4feb8a5f-ea7c-4a16-b280-242bbdd4f478",
+              "name": "Configuration item",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "items",
+                    ":key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1997,\n  \"namespaceId\": 7402,\n  \"key\": \"string\",\n  \"value\": \"string\",\n  \"comment\": \"string\",\n  \"lineNum\": 2818,\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"1977-10-13T10:43:55.225Z\",\n  \"dataChangeLastModifiedTime\": \"1976-06-12T14:06:35.014Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19d8ad66-3c25-49e4-b1f2-63f05ab0f92d",
+              "name": "Item not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "items",
+                    ":key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "953746d5-ff73-4685-9f0d-4d66707e706e",
+          "name": "Update a configuration item",
+          "request": {
+            "name": "Update a configuration item",
+            "description": {},
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName",
+                "items",
+                ":key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "createIfNotExists",
+                  "value": "false",
+                  "description": "Create item if it does not exist"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key\": \"<string>\",\n  \"value\": \"<string>\",\n  \"dataChangeLastModifiedBy\": \"<string>\",\n  \"comment\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5c07ec36-ed04-446b-9a98-89c52dfe3e07",
+              "name": "Item updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "items",
+                    ":key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "createIfNotExists",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key\": \"<string>\",\n  \"value\": \"<string>\",\n  \"dataChangeLastModifiedBy\": \"<string>\",\n  \"comment\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b36ed2b-14e6-48c9-9119-17919bc1d49a",
+          "name": "Delete a configuration item",
+          "request": {
+            "name": "Delete a configuration item",
+            "description": {},
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName",
+                "items",
+                ":key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "operator",
+                  "value": "<string>",
+                  "description": "(Required) Operator (user) performing the delete"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "key",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4d0717c-f560-4b0d-b8d1-ea5d60c3a488",
+              "name": "Item deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "items",
+                    ":key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "operator",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "key",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bd88ee5f-a89e-42d8-9438-3e6464692082",
+      "name": "Releases",
+      "description": {
+        "content": "Release and publish management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c931438e-478d-445b-9ad7-8c85ef35aae7",
+          "name": "Get latest release",
+          "request": {
+            "name": "Get latest release",
+            "description": {
+              "content": "Returns the latest active release for a namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName",
+                "releases",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b934190b-32ca-4015-a30f-60226917d9af",
+              "name": "Latest release",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "releases",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3988,\n  \"appId\": \"string\",\n  \"clusterName\": \"string\",\n  \"namespaceName\": \"string\",\n  \"name\": \"string\",\n  \"comment\": \"string\",\n  \"isAbandoned\": false,\n  \"configurations\": {\n    \"key_0\": \"string\"\n  },\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"2016-06-23T10:54:14.821Z\",\n  \"dataChangeLastModifiedTime\": \"2003-01-29T16:56:30.104Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "665cc063-2228-4a90-80ed-211bdb85dc35",
+              "name": "No releases found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "releases",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2568562-d3f7-4088-884c-942cce34e99e",
+          "name": "Publish a release",
+          "request": {
+            "name": "Publish a release",
+            "description": {
+              "content": "Publishes current configuration items as a new release.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName",
+                "releases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"releaseTitle\": \"<string>\",\n  \"releasedBy\": \"<string>\",\n  \"releaseComment\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7922bef8-cf6b-4434-b3d2-c2e3b60e77a5",
+              "name": "Release created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "releases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"releaseTitle\": \"<string>\",\n  \"releasedBy\": \"<string>\",\n  \"releaseComment\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3988,\n  \"appId\": \"string\",\n  \"clusterName\": \"string\",\n  \"namespaceName\": \"string\",\n  \"name\": \"string\",\n  \"comment\": \"string\",\n  \"isAbandoned\": false,\n  \"configurations\": {\n    \"key_0\": \"string\"\n  },\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"2016-06-23T10:54:14.821Z\",\n  \"dataChangeLastModifiedTime\": \"2003-01-29T16:56:30.104Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b88314f-924c-44d1-b295-8215fff82517",
+          "name": "Rollback a release",
+          "request": {
+            "name": "Rollback a release",
+            "description": {
+              "content": "Rolls back to a previous release by release ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "releases",
+                ":releaseId",
+                "rollback"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "operator",
+                  "value": "<string>",
+                  "description": "(Required) Operator performing the rollback"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "releaseId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dafef984-2baf-4d06-a8b7-4b1ce1436749",
+              "name": "Rollback successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "releases",
+                    ":releaseId",
+                    "rollback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "operator",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "releaseId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "047bdf4d-823e-4c10-a32f-13ac4234babc",
+          "name": "Create a gray release",
+          "request": {
+            "name": "Create a gray release",
+            "description": {
+              "content": "Creates a gray (canary) release for a subset of instances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "envs",
+                ":env",
+                "apps",
+                ":appId",
+                "clusters",
+                ":clusterName",
+                "namespaces",
+                ":namespaceName",
+                "gray-del-releases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "env",
+                  "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "clusterName",
+                  "description": "(Required) Cluster name (default is 'default')"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespaceName",
+                  "description": "(Required) Namespace name (default is 'application')"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"releaseTitle\": \"<string>\",\n  \"releasedBy\": \"<string>\",\n  \"grayDelKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"releaseComment\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "72cfa595-9a5e-417c-84ab-b9e712f68d30",
+              "name": "Gray release created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "envs",
+                    ":env",
+                    "apps",
+                    ":appId",
+                    "clusters",
+                    ":clusterName",
+                    "namespaces",
+                    ":namespaceName",
+                    "gray-del-releases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "env",
+                      "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "clusterName",
+                      "description": "(Required) Cluster name (default is 'default')"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespaceName",
+                      "description": "(Required) Namespace name (default is 'application')"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"releaseTitle\": \"<string>\",\n  \"releasedBy\": \"<string>\",\n  \"grayDelKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"releaseComment\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3988,\n  \"appId\": \"string\",\n  \"clusterName\": \"string\",\n  \"namespaceName\": \"string\",\n  \"name\": \"string\",\n  \"comment\": \"string\",\n  \"isAbandoned\": false,\n  \"configurations\": {\n    \"key_0\": \"string\"\n  },\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"2016-06-23T10:54:14.821Z\",\n  \"dataChangeLastModifiedTime\": \"2003-01-29T16:56:30.104Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8070",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ee9358d1-26ab-41d2-a719-4bf8bb0509d5",
+    "name": "Apollo Config Open API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apollo Open API for configuration management including app management, namespace management, configuration publishing, and release management. Apollo provides centralized configuration management for distributed systems with real-time push, versioning, and gray release support.\n\nContact Support:\n Name: Apollo Config",
+      "type": "text/plain"
+    }
+  }
+}

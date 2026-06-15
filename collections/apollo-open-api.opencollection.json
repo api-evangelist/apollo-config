@@ -1,0 +1,682 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apollo Config Open API",
+    "version": "2.2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Apps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all apps",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/apps"
+          },
+          "docs": "Returns a list of all registered applications."
+        },
+        {
+          "info": {
+            "name": "Get app info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/apps/:appId",
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              }
+            ]
+          },
+          "docs": "Returns information about a specific application."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Clusters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get environments and clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/apps/:appId/envclusters",
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              }
+            ]
+          },
+          "docs": "Returns all environments and clusters for an application."
+        },
+        {
+          "info": {
+            "name": "Get cluster info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              }
+            ]
+          },
+          "docs": "Returns information about a specific cluster."
+        },
+        {
+          "info": {
+            "name": "Create a cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new cluster for an application in an environment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Namespaces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List namespaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              }
+            ]
+          },
+          "docs": "Returns all namespaces for an app/env/cluster combination."
+        },
+        {
+          "info": {
+            "name": "Create a namespace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new namespace (app-level namespace definition)."
+        },
+        {
+          "info": {
+            "name": "Get namespace info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ]
+          },
+          "docs": "Returns information about a specific namespace including items."
+        },
+        {
+          "info": {
+            "name": "Get namespace lock info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/lock",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ]
+          },
+          "docs": "Returns lock information for a namespace (who modified it last)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List configuration items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ]
+          },
+          "docs": "Returns all configuration items in a namespace."
+        },
+        {
+          "info": {
+            "name": "Create a configuration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new key-value configuration item in a namespace."
+        },
+        {
+          "info": {
+            "name": "Get a configuration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items/:key",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a configuration item"
+        },
+        {
+          "info": {
+            "name": "Update a configuration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items/:key",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "createIfNotExists",
+                "value": "",
+                "type": "query",
+                "description": "Create item if it does not exist"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a configuration item"
+        },
+        {
+          "info": {
+            "name": "Delete a configuration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items/:key",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "operator",
+                "value": "",
+                "type": "query",
+                "description": "Operator (user) performing the delete"
+              }
+            ]
+          },
+          "docs": "Delete a configuration item"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Releases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get latest release",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/releases/latest",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ]
+          },
+          "docs": "Returns the latest active release for a namespace."
+        },
+        {
+          "info": {
+            "name": "Publish a release",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/releases",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publishes current configuration items as a new release."
+        },
+        {
+          "info": {
+            "name": "Rollback a release",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/releases/:releaseId/rollback",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "releaseId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "operator",
+                "value": "",
+                "type": "query",
+                "description": "Operator performing the rollback"
+              }
+            ]
+          },
+          "docs": "Rolls back to a previous release by release ID."
+        },
+        {
+          "info": {
+            "name": "Create a gray release",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/gray-del-releases",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a gray (canary) release for a subset of instances."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
