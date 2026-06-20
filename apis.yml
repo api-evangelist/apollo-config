@@ -5,7 +5,7 @@ description: >-
   scenarios, providing centralized configuration management, real-time updates, versioning, and multi-environment
   support. Originally developed by Ctrip, now maintained by the apolloconfig community under Apache 2.0 license.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Apache 2.0
   - Configuration Management
