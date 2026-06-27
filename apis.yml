@@ -70,13 +70,13 @@ common:
     url: https://github.com/apolloconfig/apollo/releases
   - type: Support
     url: https://github.com/apolloconfig/apollo/issues
-  - type: SDK
+  - type: SDKs
     url: https://github.com/apolloconfig/apollo-java
     title: Java SDK
-  - type: SDK
+  - type: SDKs
     url: https://github.com/apolloconfig/apollo.net
     title: .NET SDK
-  - type: SDK
+  - type: SDKs
     url: https://github.com/apolloconfig/agollo
     title: Go SDK
   - type: CodeExamples
@@ -136,7 +136,7 @@ common:
         description: Spring Boot integration via Java SDK for auto-configuration refresh.
   - name: Agent Skills
     url: https://github.com/apolloconfig/apollo-skills
-    type: AgentSkill
+    type: AgentSkills
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
