@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/apollo-open-api.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: PortalToken
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: Apollo Portal open API token
+  sources:
+  - openapi/apollo-open-api.yml

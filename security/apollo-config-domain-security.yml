@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.apolloconfig.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 27 16:36:56 2026 GMT
+  hsts: false
+domains:
+- domain: apolloconfig.com
+  dnssec: true
+  caa:
+  - apolloconfig.github.io.
+  - 0 issuewild "sectigo.com"
+  - 0 issue "digicert.com"
+  - 0 issue "letsencrypt.org"
+  - 0 issue "sectigo.com"
+  - 0 issuewild "digicert.com"
+  spf: false
+  dmarc: false
