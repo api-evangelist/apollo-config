@@ -58,6 +58,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-release-schema.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/apollo-config-agentic-access.yml
   - type: DomainSecurity
     url: security/apollo-config-domain-security.yml
   - type: Authentication
