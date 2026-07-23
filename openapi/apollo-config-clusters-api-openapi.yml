@@ -1,0 +1,152 @@
+openapi: 3.1.0
+info:
+  title: Apollo Config Open Apps Clusters API
+  description: Apollo Open API for configuration management including app management, namespace management, configuration publishing, and release management. Apollo provides centralized configuration management for distributed systems with real-time push, versioning, and gray release support.
+  version: 2.2.0
+  contact:
+    name: Apollo Config
+    url: https://www.apolloconfig.com/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: http://localhost:8070
+  description: Local Apollo Portal
+- url: http://{portal_host}:{port}
+  description: Custom Apollo Portal
+  variables:
+    portal_host:
+      default: localhost
+    port:
+      default: '8070'
+security:
+- PortalToken: []
+tags:
+- name: Clusters
+  description: Cluster management
+paths:
+  /openapi/v1/apps/{appId}/envclusters:
+    get:
+      operationId: getEnvClusters
+      summary: Get environments and clusters
+      description: Returns all environments and clusters for an application.
+      tags:
+      - Clusters
+      parameters:
+      - $ref: '#/components/parameters/appId'
+      responses:
+        '200':
+          description: Environments and clusters
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    env:
+                      type: string
+                    clusters:
+                      type: array
+                      items:
+                        type: string
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}:
+    get:
+      operationId: getCluster
+      summary: Get cluster info
+      description: Returns information about a specific cluster.
+      tags:
+      - Clusters
+      parameters:
+      - $ref: '#/components/parameters/env'
+      - $ref: '#/components/parameters/appId'
+      - $ref: '#/components/parameters/clusterName'
+      responses:
+        '200':
+          description: Cluster info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cluster'
+        '404':
+          description: Cluster not found
+    post:
+      operationId: createCluster
+      summary: Create a cluster
+      description: Creates a new cluster for an application in an environment.
+      tags:
+      - Clusters
+      parameters:
+      - $ref: '#/components/parameters/env'
+      - $ref: '#/components/parameters/appId'
+      - $ref: '#/components/parameters/clusterName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              - appId
+              properties:
+                name:
+                  type: string
+                appId:
+                  type: string
+                dataChangeCreatedBy:
+                  type: string
+      responses:
+        '200':
+          description: Cluster created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cluster'
+components:
+  schemas:
+    Cluster:
+      type: object
+      properties:
+        name:
+          type: string
+        appId:
+          type: string
+        dataChangeCreatedBy:
+          type: string
+        dataChangeLastModifiedBy:
+          type: string
+        dataChangeCreatedTime:
+          type: string
+          format: date-time
+        dataChangeLastModifiedTime:
+          type: string
+          format: date-time
+  parameters:
+    appId:
+      name: appId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Application ID
+    env:
+      name: env
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Environment (e.g., DEV, FAT, UAT, PRO)
+    clusterName:
+      name: clusterName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Cluster name (default is 'default')
+  securitySchemes:
+    PortalToken:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Apollo Portal open API token
