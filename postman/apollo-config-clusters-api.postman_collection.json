@@ -1,0 +1,548 @@
+{
+  "info": {
+    "_postman_id": "a86e2f63-9095-47f6-b929-68ac6c99c17c",
+    "name": "Apollo Config Open Apps Clusters API",
+    "description": "Apollo Open API for configuration management including app management, namespace management, configuration publishing, and release management. Apollo provides centralized configuration management for distributed systems with real-time push, versioning, and gray release support.\n\nContact Support:\n Name: Apollo Config",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:02:47.000Z",
+    "updatedAt": "2026-07-28T01:02:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a86e2f63-9095-47f6-b929-68ac6c99c17c"
+  },
+  "item": [
+    {
+      "name": "openapi",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "apps",
+              "item": [
+                {
+                  "name": "{appId}",
+                  "item": [
+                    {
+                      "name": "envclusters",
+                      "item": [
+                        {
+                          "name": "Get environments and clusters",
+                          "id": "f5a0c49e-2ddd-4294-ae29-28d92274ce32",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/openapi/v1/apps/:appId/envclusters",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "openapi",
+                                "v1",
+                                "apps",
+                                ":appId",
+                                "envclusters"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "dbe5e771-eeb9-4e95-950f-ce547a782dd6",
+                                  "key": "appId",
+                                  "value": "<string>",
+                                  "description": "(Required) Application ID"
+                                }
+                              ]
+                            },
+                            "description": "Returns all environments and clusters for an application."
+                          },
+                          "response": [
+                            {
+                              "id": "717b386b-d691-4fae-b839-93c9209810a0",
+                              "name": "Environments and clusters",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/openapi/v1/apps/:appId/envclusters",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "openapi",
+                                    "v1",
+                                    "apps",
+                                    ":appId",
+                                    "envclusters"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "appId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "[\n  {\n    \"env\": \"<string>\",\n    \"clusters\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  {\n    \"env\": \"<string>\",\n    \"clusters\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n]",
+                              "createdAt": "2026-07-28T01:02:47.000Z",
+                              "updatedAt": "2026-07-28T01:02:47.000Z",
+                              "uid": "35240-717b386b-d691-4fae-b839-93c9209810a0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:02:47.000Z",
+                          "updatedAt": "2026-07-28T01:02:47.000Z",
+                          "uid": "35240-f5a0c49e-2ddd-4294-ae29-28d92274ce32"
+                        }
+                      ],
+                      "id": "8761a1cf-d398-4197-9093-fac3a5ffb307",
+                      "createdAt": "2026-07-28T01:02:47.000Z",
+                      "updatedAt": "2026-07-28T01:02:47.000Z",
+                      "uid": "35240-8761a1cf-d398-4197-9093-fac3a5ffb307"
+                    }
+                  ],
+                  "id": "4a781f9b-9f75-4672-8c18-9a969ae5ae45",
+                  "createdAt": "2026-07-28T01:02:47.000Z",
+                  "updatedAt": "2026-07-28T01:02:47.000Z",
+                  "uid": "35240-4a781f9b-9f75-4672-8c18-9a969ae5ae45"
+                }
+              ],
+              "id": "d42735f7-d5ef-4ee0-802b-d3a3f3238d7e",
+              "createdAt": "2026-07-28T01:02:47.000Z",
+              "updatedAt": "2026-07-28T01:02:47.000Z",
+              "uid": "35240-d42735f7-d5ef-4ee0-802b-d3a3f3238d7e"
+            },
+            {
+              "name": "envs",
+              "item": [
+                {
+                  "name": "{env}",
+                  "item": [
+                    {
+                      "name": "apps",
+                      "item": [
+                        {
+                          "name": "{appId}",
+                          "item": [
+                            {
+                              "name": "clusters",
+                              "item": [
+                                {
+                                  "name": "{clusterName}",
+                                  "item": [
+                                    {
+                                      "name": "Get cluster info",
+                                      "id": "5ef083d4-9de6-4929-9398-3643125072e5",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "openapi",
+                                            "v1",
+                                            "envs",
+                                            ":env",
+                                            "apps",
+                                            ":appId",
+                                            "clusters",
+                                            ":clusterName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "e580610e-5479-4804-8e84-3c168cdc573c",
+                                              "key": "env",
+                                              "value": "<string>",
+                                              "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                                            },
+                                            {
+                                              "id": "18d35030-ec99-4c95-a68f-3c0085c0782e",
+                                              "key": "appId",
+                                              "value": "<string>",
+                                              "description": "(Required) Application ID"
+                                            },
+                                            {
+                                              "id": "f7c061fa-4e7b-4481-8049-4e00d12c294f",
+                                              "key": "clusterName",
+                                              "value": "<string>",
+                                              "description": "(Required) Cluster name (default is 'default')"
+                                            }
+                                          ]
+                                        },
+                                        "description": "Returns information about a specific cluster."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "c624c551-1b41-4d98-b642-d643a5fecb8e",
+                                          "name": "Cluster info",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: apikey",
+                                                "key": "Authorization",
+                                                "value": "<API Key>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "openapi",
+                                                "v1",
+                                                "envs",
+                                                ":env",
+                                                "apps",
+                                                ":appId",
+                                                "clusters",
+                                                ":clusterName"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "env"
+                                                },
+                                                {
+                                                  "key": "appId"
+                                                },
+                                                {
+                                                  "key": "clusterName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"name\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\",\n  \"dataChangeLastModifiedBy\": \"<string>\",\n  \"dataChangeCreatedTime\": \"<dateTime>\",\n  \"dataChangeLastModifiedTime\": \"<dateTime>\"\n}",
+                                          "createdAt": "2026-07-28T01:02:47.000Z",
+                                          "updatedAt": "2026-07-28T01:02:47.000Z",
+                                          "uid": "35240-c624c551-1b41-4d98-b642-d643a5fecb8e"
+                                        },
+                                        {
+                                          "id": "24badba4-04f4-496f-bb1f-5f34e58baeee",
+                                          "name": "Cluster not found",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "description": "Added as a part of security scheme: apikey",
+                                                "key": "Authorization",
+                                                "value": "<API Key>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "openapi",
+                                                "v1",
+                                                "envs",
+                                                ":env",
+                                                "apps",
+                                                ":appId",
+                                                "clusters",
+                                                ":clusterName"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "env"
+                                                },
+                                                {
+                                                  "key": "appId"
+                                                },
+                                                {
+                                                  "key": "clusterName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Not Found",
+                                          "code": 404,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T01:02:47.000Z",
+                                          "updatedAt": "2026-07-28T01:02:47.000Z",
+                                          "uid": "35240-24badba4-04f4-496f-bb1f-5f34e58baeee"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:02:47.000Z",
+                                      "updatedAt": "2026-07-28T01:02:47.000Z",
+                                      "uid": "35240-5ef083d4-9de6-4929-9398-3643125072e5"
+                                    },
+                                    {
+                                      "name": "Create a cluster",
+                                      "id": "ca935f4b-eb39-464b-8d9e-37faf3b10c7c",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"name\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "openapi",
+                                            "v1",
+                                            "envs",
+                                            ":env",
+                                            "apps",
+                                            ":appId",
+                                            "clusters",
+                                            ":clusterName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "c5f31ee1-b4d6-4aa2-9d8b-2d9684e16608",
+                                              "key": "env",
+                                              "value": "<string>",
+                                              "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                                            },
+                                            {
+                                              "id": "c3e9de15-6a12-4dcf-81e1-557b854c0ea7",
+                                              "key": "appId",
+                                              "value": "<string>",
+                                              "description": "(Required) Application ID"
+                                            },
+                                            {
+                                              "id": "e8e03f52-8ee9-4da8-bf69-19af4d44a378",
+                                              "key": "clusterName",
+                                              "value": "<string>",
+                                              "description": "(Required) Cluster name (default is 'default')"
+                                            }
+                                          ]
+                                        },
+                                        "description": "Creates a new cluster for an application in an environment."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "80e1284c-74aa-4b35-b2b3-94d61b6a9c98",
+                                          "name": "Cluster created",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: apikey",
+                                                "key": "Authorization",
+                                                "value": "<API Key>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"name\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "openapi",
+                                                "v1",
+                                                "envs",
+                                                ":env",
+                                                "apps",
+                                                ":appId",
+                                                "clusters",
+                                                ":clusterName"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "env"
+                                                },
+                                                {
+                                                  "key": "appId"
+                                                },
+                                                {
+                                                  "key": "clusterName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"name\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dataChangeCreatedBy\": \"<string>\",\n  \"dataChangeLastModifiedBy\": \"<string>\",\n  \"dataChangeCreatedTime\": \"<dateTime>\",\n  \"dataChangeLastModifiedTime\": \"<dateTime>\"\n}",
+                                          "createdAt": "2026-07-28T01:02:47.000Z",
+                                          "updatedAt": "2026-07-28T01:02:47.000Z",
+                                          "uid": "35240-80e1284c-74aa-4b35-b2b3-94d61b6a9c98"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:02:47.000Z",
+                                      "updatedAt": "2026-07-28T01:02:47.000Z",
+                                      "uid": "35240-ca935f4b-eb39-464b-8d9e-37faf3b10c7c"
+                                    }
+                                  ],
+                                  "id": "2cf9300b-eb77-4872-b082-78deae92b160",
+                                  "createdAt": "2026-07-28T01:02:47.000Z",
+                                  "updatedAt": "2026-07-28T01:02:47.000Z",
+                                  "uid": "35240-2cf9300b-eb77-4872-b082-78deae92b160"
+                                }
+                              ],
+                              "id": "22513777-a013-4d63-b612-32ed0d64e53c",
+                              "createdAt": "2026-07-28T01:02:47.000Z",
+                              "updatedAt": "2026-07-28T01:02:47.000Z",
+                              "uid": "35240-22513777-a013-4d63-b612-32ed0d64e53c"
+                            }
+                          ],
+                          "id": "9fc045bc-35f8-437d-8b59-738c695dedc4",
+                          "createdAt": "2026-07-28T01:02:47.000Z",
+                          "updatedAt": "2026-07-28T01:02:47.000Z",
+                          "uid": "35240-9fc045bc-35f8-437d-8b59-738c695dedc4"
+                        }
+                      ],
+                      "id": "c430ac59-f689-406c-9a24-0a6f6ae17262",
+                      "createdAt": "2026-07-28T01:02:47.000Z",
+                      "updatedAt": "2026-07-28T01:02:47.000Z",
+                      "uid": "35240-c430ac59-f689-406c-9a24-0a6f6ae17262"
+                    }
+                  ],
+                  "id": "75aef3c6-75f8-48bf-adbb-13408f0c47ed",
+                  "createdAt": "2026-07-28T01:02:47.000Z",
+                  "updatedAt": "2026-07-28T01:02:47.000Z",
+                  "uid": "35240-75aef3c6-75f8-48bf-adbb-13408f0c47ed"
+                }
+              ],
+              "id": "1cc28206-e35c-48fc-a7fb-972971a3990d",
+              "createdAt": "2026-07-28T01:02:47.000Z",
+              "updatedAt": "2026-07-28T01:02:47.000Z",
+              "uid": "35240-1cc28206-e35c-48fc-a7fb-972971a3990d"
+            }
+          ],
+          "id": "51a6f9dc-80ee-4fbc-8b45-816bfe155fc4",
+          "createdAt": "2026-07-28T01:02:47.000Z",
+          "updatedAt": "2026-07-28T01:02:47.000Z",
+          "uid": "35240-51a6f9dc-80ee-4fbc-8b45-816bfe155fc4"
+        }
+      ],
+      "id": "0788a9f1-d3cd-4afa-9190-9b0121506e68",
+      "createdAt": "2026-07-28T01:02:47.000Z",
+      "updatedAt": "2026-07-28T01:02:47.000Z",
+      "uid": "35240-0788a9f1-d3cd-4afa-9190-9b0121506e68"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8070"
+    }
+  ]
+}

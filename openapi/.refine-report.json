@@ -1,0 +1,22 @@
+{
+  "provider": "apollo-config",
+  "sources": [
+    "apollo-config-apps-api-openapi.yml",
+    "apollo-config-clusters-api-openapi.yml",
+    "apollo-config-items-api-openapi.yml",
+    "apollo-config-namespaces-api-openapi.yml",
+    "apollo-config-releases-api-openapi.yml"
+  ],
+  "outputs": [
+    "apollo-config-apps-api-openapi.yml",
+    "apollo-config-clusters-api-openapi.yml",
+    "apollo-config-items-api-openapi.yml",
+    "apollo-config-namespaces-api-openapi.yml",
+    "apollo-config-releases-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

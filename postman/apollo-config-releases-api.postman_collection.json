@@ -1,0 +1,806 @@
+{
+  "info": {
+    "_postman_id": "847ada54-fa47-48fc-8f65-98aa59af353d",
+    "name": "Apollo Config Open Apps Releases API",
+    "description": "Apollo Open API for configuration management including app management, namespace management, configuration publishing, and release management. Apollo provides centralized configuration management for distributed systems with real-time push, versioning, and gray release support.\n\nContact Support:\n Name: Apollo Config",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:02:56.000Z",
+    "updatedAt": "2026-07-28T01:02:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-847ada54-fa47-48fc-8f65-98aa59af353d"
+  },
+  "item": [
+    {
+      "name": "openapi",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "envs",
+              "item": [
+                {
+                  "name": "{env}",
+                  "item": [
+                    {
+                      "name": "apps",
+                      "item": [
+                        {
+                          "name": "{appId}",
+                          "item": [
+                            {
+                              "name": "clusters",
+                              "item": [
+                                {
+                                  "name": "{clusterName}",
+                                  "item": [
+                                    {
+                                      "name": "namespaces",
+                                      "item": [
+                                        {
+                                          "name": "{namespaceName}",
+                                          "item": [
+                                            {
+                                              "name": "releases",
+                                              "item": [
+                                                {
+                                                  "name": "latest",
+                                                  "item": [
+                                                    {
+                                                      "name": "Get latest release",
+                                                      "id": "e7aa87fc-9998-49a1-962c-b12ba7cd87bc",
+                                                      "protocolProfileBehavior": {
+                                                        "disableBodyPruning": true
+                                                      },
+                                                      "request": {
+                                                        "method": "GET",
+                                                        "header": [
+                                                          {
+                                                            "key": "Accept",
+                                                            "value": "application/json"
+                                                          }
+                                                        ],
+                                                        "url": {
+                                                          "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/releases/latest",
+                                                          "host": [
+                                                            "{{baseUrl}}"
+                                                          ],
+                                                          "path": [
+                                                            "openapi",
+                                                            "v1",
+                                                            "envs",
+                                                            ":env",
+                                                            "apps",
+                                                            ":appId",
+                                                            "clusters",
+                                                            ":clusterName",
+                                                            "namespaces",
+                                                            ":namespaceName",
+                                                            "releases",
+                                                            "latest"
+                                                          ],
+                                                          "variable": [
+                                                            {
+                                                              "id": "7f03040f-62ca-49cd-aab7-6706c45f3e6d",
+                                                              "key": "env",
+                                                              "value": "<string>",
+                                                              "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                                                            },
+                                                            {
+                                                              "id": "321e93cb-ab68-421b-8b57-0bc4ad36aae7",
+                                                              "key": "appId",
+                                                              "value": "<string>",
+                                                              "description": "(Required) Application ID"
+                                                            },
+                                                            {
+                                                              "id": "736a9d60-54f8-4b9c-b0b5-f7f26fbddbf7",
+                                                              "key": "clusterName",
+                                                              "value": "<string>",
+                                                              "description": "(Required) Cluster name (default is 'default')"
+                                                            },
+                                                            {
+                                                              "id": "155a7911-89eb-47d8-805a-6454dc97a6b7",
+                                                              "key": "namespaceName",
+                                                              "value": "<string>",
+                                                              "description": "(Required) Namespace name (default is 'application')"
+                                                            }
+                                                          ]
+                                                        },
+                                                        "description": "Returns the latest active release for a namespace."
+                                                      },
+                                                      "response": [
+                                                        {
+                                                          "id": "05914e83-5f19-42ce-aa93-e16418017984",
+                                                          "name": "Latest release",
+                                                          "originalRequest": {
+                                                            "method": "GET",
+                                                            "header": [
+                                                              {
+                                                                "key": "Accept",
+                                                                "value": "application/json"
+                                                              },
+                                                              {
+                                                                "description": "Added as a part of security scheme: apikey",
+                                                                "key": "Authorization",
+                                                                "value": "<API Key>"
+                                                              }
+                                                            ],
+                                                            "url": {
+                                                              "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/releases/latest",
+                                                              "host": [
+                                                                "{{baseUrl}}"
+                                                              ],
+                                                              "path": [
+                                                                "openapi",
+                                                                "v1",
+                                                                "envs",
+                                                                ":env",
+                                                                "apps",
+                                                                ":appId",
+                                                                "clusters",
+                                                                ":clusterName",
+                                                                "namespaces",
+                                                                ":namespaceName",
+                                                                "releases",
+                                                                "latest"
+                                                              ],
+                                                              "variable": [
+                                                                {
+                                                                  "key": "env"
+                                                                },
+                                                                {
+                                                                  "key": "appId"
+                                                                },
+                                                                {
+                                                                  "key": "clusterName"
+                                                                },
+                                                                {
+                                                                  "key": "namespaceName"
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          "status": "OK",
+                                                          "code": 200,
+                                                          "_postman_previewlanguage": "json",
+                                                          "header": [
+                                                            {
+                                                              "key": "Content-Type",
+                                                              "value": "application/json"
+                                                            }
+                                                          ],
+                                                          "cookie": [],
+                                                          "responseTime": null,
+                                                          "body": "{\n  \"id\": \"<long>\",\n  \"appId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"namespaceName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"isAbandoned\": \"<boolean>\",\n  \"configurations\": {\n    \"cillum_7\": \"<string>\"\n  },\n  \"dataChangeCreatedBy\": \"<string>\",\n  \"dataChangeLastModifiedBy\": \"<string>\",\n  \"dataChangeCreatedTime\": \"<dateTime>\",\n  \"dataChangeLastModifiedTime\": \"<dateTime>\"\n}",
+                                                          "createdAt": "2026-07-28T01:02:57.000Z",
+                                                          "updatedAt": "2026-07-28T01:02:57.000Z",
+                                                          "uid": "35240-05914e83-5f19-42ce-aa93-e16418017984"
+                                                        },
+                                                        {
+                                                          "id": "b2bd4e77-8d5d-40e5-a211-42eca575b184",
+                                                          "name": "No releases found",
+                                                          "originalRequest": {
+                                                            "method": "GET",
+                                                            "header": [
+                                                              {
+                                                                "description": "Added as a part of security scheme: apikey",
+                                                                "key": "Authorization",
+                                                                "value": "<API Key>"
+                                                              }
+                                                            ],
+                                                            "url": {
+                                                              "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/releases/latest",
+                                                              "host": [
+                                                                "{{baseUrl}}"
+                                                              ],
+                                                              "path": [
+                                                                "openapi",
+                                                                "v1",
+                                                                "envs",
+                                                                ":env",
+                                                                "apps",
+                                                                ":appId",
+                                                                "clusters",
+                                                                ":clusterName",
+                                                                "namespaces",
+                                                                ":namespaceName",
+                                                                "releases",
+                                                                "latest"
+                                                              ],
+                                                              "variable": [
+                                                                {
+                                                                  "key": "env"
+                                                                },
+                                                                {
+                                                                  "key": "appId"
+                                                                },
+                                                                {
+                                                                  "key": "clusterName"
+                                                                },
+                                                                {
+                                                                  "key": "namespaceName"
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          "status": "Not Found",
+                                                          "code": 404,
+                                                          "_postman_previewlanguage": "text",
+                                                          "header": [],
+                                                          "cookie": [],
+                                                          "responseTime": null,
+                                                          "body": null,
+                                                          "createdAt": "2026-07-28T01:02:57.000Z",
+                                                          "updatedAt": "2026-07-28T01:02:57.000Z",
+                                                          "uid": "35240-b2bd4e77-8d5d-40e5-a211-42eca575b184"
+                                                        }
+                                                      ],
+                                                      "createdAt": "2026-07-28T01:02:57.000Z",
+                                                      "updatedAt": "2026-07-28T01:02:57.000Z",
+                                                      "uid": "35240-e7aa87fc-9998-49a1-962c-b12ba7cd87bc"
+                                                    }
+                                                  ],
+                                                  "id": "5ef90dc2-0b77-42ad-989d-7a095ab6533b",
+                                                  "createdAt": "2026-07-28T01:02:57.000Z",
+                                                  "updatedAt": "2026-07-28T01:02:57.000Z",
+                                                  "uid": "35240-5ef90dc2-0b77-42ad-989d-7a095ab6533b"
+                                                },
+                                                {
+                                                  "name": "Publish a release",
+                                                  "id": "09695746-07c9-44bf-940c-8cb62f59070b",
+                                                  "protocolProfileBehavior": {
+                                                    "disableBodyPruning": true
+                                                  },
+                                                  "request": {
+                                                    "method": "POST",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"releaseTitle\": \"<string>\",\n  \"releasedBy\": \"<string>\",\n  \"releaseComment\": \"<string>\"\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/releases",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "openapi",
+                                                        "v1",
+                                                        "envs",
+                                                        ":env",
+                                                        "apps",
+                                                        ":appId",
+                                                        "clusters",
+                                                        ":clusterName",
+                                                        "namespaces",
+                                                        ":namespaceName",
+                                                        "releases"
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "id": "35ef8a58-b401-41b5-a5ff-0d58824b9185",
+                                                          "key": "env",
+                                                          "value": "<string>",
+                                                          "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                                                        },
+                                                        {
+                                                          "id": "7b3e5bf8-3e9f-4542-bdf2-425562859aa5",
+                                                          "key": "appId",
+                                                          "value": "<string>",
+                                                          "description": "(Required) Application ID"
+                                                        },
+                                                        {
+                                                          "id": "b6ff5021-5b5b-4702-b993-1e792237dee8",
+                                                          "key": "clusterName",
+                                                          "value": "<string>",
+                                                          "description": "(Required) Cluster name (default is 'default')"
+                                                        },
+                                                        {
+                                                          "id": "9564d42d-704e-4a22-87ff-27363a95ffa3",
+                                                          "key": "namespaceName",
+                                                          "value": "<string>",
+                                                          "description": "(Required) Namespace name (default is 'application')"
+                                                        }
+                                                      ]
+                                                    },
+                                                    "description": "Publishes current configuration items as a new release."
+                                                  },
+                                                  "response": [
+                                                    {
+                                                      "id": "c27fad36-72dc-4acd-93b5-50292d8e7882",
+                                                      "name": "Release created",
+                                                      "originalRequest": {
+                                                        "method": "POST",
+                                                        "header": [
+                                                          {
+                                                            "key": "Content-Type",
+                                                            "value": "application/json"
+                                                          },
+                                                          {
+                                                            "key": "Accept",
+                                                            "value": "application/json"
+                                                          },
+                                                          {
+                                                            "description": "Added as a part of security scheme: apikey",
+                                                            "key": "Authorization",
+                                                            "value": "<API Key>"
+                                                          }
+                                                        ],
+                                                        "body": {
+                                                          "mode": "raw",
+                                                          "raw": "{\n  \"releaseTitle\": \"<string>\",\n  \"releasedBy\": \"<string>\",\n  \"releaseComment\": \"<string>\"\n}",
+                                                          "options": {
+                                                            "raw": {
+                                                              "headerFamily": "json",
+                                                              "language": "json"
+                                                            }
+                                                          }
+                                                        },
+                                                        "url": {
+                                                          "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/releases",
+                                                          "host": [
+                                                            "{{baseUrl}}"
+                                                          ],
+                                                          "path": [
+                                                            "openapi",
+                                                            "v1",
+                                                            "envs",
+                                                            ":env",
+                                                            "apps",
+                                                            ":appId",
+                                                            "clusters",
+                                                            ":clusterName",
+                                                            "namespaces",
+                                                            ":namespaceName",
+                                                            "releases"
+                                                          ],
+                                                          "variable": [
+                                                            {
+                                                              "key": "env"
+                                                            },
+                                                            {
+                                                              "key": "appId"
+                                                            },
+                                                            {
+                                                              "key": "clusterName"
+                                                            },
+                                                            {
+                                                              "key": "namespaceName"
+                                                            }
+                                                          ]
+                                                        }
+                                                      },
+                                                      "status": "OK",
+                                                      "code": 200,
+                                                      "_postman_previewlanguage": "json",
+                                                      "header": [
+                                                        {
+                                                          "key": "Content-Type",
+                                                          "value": "application/json"
+                                                        }
+                                                      ],
+                                                      "cookie": [],
+                                                      "responseTime": null,
+                                                      "body": "{\n  \"id\": \"<long>\",\n  \"appId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"namespaceName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"isAbandoned\": \"<boolean>\",\n  \"configurations\": {\n    \"cillum_7\": \"<string>\"\n  },\n  \"dataChangeCreatedBy\": \"<string>\",\n  \"dataChangeLastModifiedBy\": \"<string>\",\n  \"dataChangeCreatedTime\": \"<dateTime>\",\n  \"dataChangeLastModifiedTime\": \"<dateTime>\"\n}",
+                                                      "createdAt": "2026-07-28T01:02:57.000Z",
+                                                      "updatedAt": "2026-07-28T01:02:57.000Z",
+                                                      "uid": "35240-c27fad36-72dc-4acd-93b5-50292d8e7882"
+                                                    }
+                                                  ],
+                                                  "createdAt": "2026-07-28T01:02:57.000Z",
+                                                  "updatedAt": "2026-07-28T01:02:57.000Z",
+                                                  "uid": "35240-09695746-07c9-44bf-940c-8cb62f59070b"
+                                                }
+                                              ],
+                                              "id": "d8494d1d-9f95-459c-b0ca-eeebc6409ae5",
+                                              "createdAt": "2026-07-28T01:02:57.000Z",
+                                              "updatedAt": "2026-07-28T01:02:57.000Z",
+                                              "uid": "35240-d8494d1d-9f95-459c-b0ca-eeebc6409ae5"
+                                            },
+                                            {
+                                              "name": "gray-del-releases",
+                                              "item": [
+                                                {
+                                                  "name": "Create a gray release",
+                                                  "id": "8fa878ef-9efb-4169-8bf5-ea65d7d7e602",
+                                                  "protocolProfileBehavior": {
+                                                    "disableBodyPruning": true
+                                                  },
+                                                  "request": {
+                                                    "method": "POST",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"releaseTitle\": \"<string>\",\n  \"releasedBy\": \"<string>\",\n  \"grayDelKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"releaseComment\": \"<string>\"\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/gray-del-releases",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "openapi",
+                                                        "v1",
+                                                        "envs",
+                                                        ":env",
+                                                        "apps",
+                                                        ":appId",
+                                                        "clusters",
+                                                        ":clusterName",
+                                                        "namespaces",
+                                                        ":namespaceName",
+                                                        "gray-del-releases"
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "id": "7f53fb60-a21e-4118-9a46-4c200459453e",
+                                                          "key": "env",
+                                                          "value": "<string>",
+                                                          "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                                                        },
+                                                        {
+                                                          "id": "601abb91-f952-4878-ab4c-9bb5470a17e7",
+                                                          "key": "appId",
+                                                          "value": "<string>",
+                                                          "description": "(Required) Application ID"
+                                                        },
+                                                        {
+                                                          "id": "7d17752e-0d5b-44af-9f8f-865dc48d9cdb",
+                                                          "key": "clusterName",
+                                                          "value": "<string>",
+                                                          "description": "(Required) Cluster name (default is 'default')"
+                                                        },
+                                                        {
+                                                          "id": "afacc6d0-4a23-45a5-8a00-e718e883c2f8",
+                                                          "key": "namespaceName",
+                                                          "value": "<string>",
+                                                          "description": "(Required) Namespace name (default is 'application')"
+                                                        }
+                                                      ]
+                                                    },
+                                                    "description": "Creates a gray (canary) release for a subset of instances."
+                                                  },
+                                                  "response": [
+                                                    {
+                                                      "id": "f69a1edf-8ab6-4739-aa16-d1f43f2870a1",
+                                                      "name": "Gray release created",
+                                                      "originalRequest": {
+                                                        "method": "POST",
+                                                        "header": [
+                                                          {
+                                                            "key": "Content-Type",
+                                                            "value": "application/json"
+                                                          },
+                                                          {
+                                                            "key": "Accept",
+                                                            "value": "application/json"
+                                                          },
+                                                          {
+                                                            "description": "Added as a part of security scheme: apikey",
+                                                            "key": "Authorization",
+                                                            "value": "<API Key>"
+                                                          }
+                                                        ],
+                                                        "body": {
+                                                          "mode": "raw",
+                                                          "raw": "{\n  \"releaseTitle\": \"<string>\",\n  \"releasedBy\": \"<string>\",\n  \"grayDelKeys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"releaseComment\": \"<string>\"\n}",
+                                                          "options": {
+                                                            "raw": {
+                                                              "headerFamily": "json",
+                                                              "language": "json"
+                                                            }
+                                                          }
+                                                        },
+                                                        "url": {
+                                                          "raw": "{{baseUrl}}/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/gray-del-releases",
+                                                          "host": [
+                                                            "{{baseUrl}}"
+                                                          ],
+                                                          "path": [
+                                                            "openapi",
+                                                            "v1",
+                                                            "envs",
+                                                            ":env",
+                                                            "apps",
+                                                            ":appId",
+                                                            "clusters",
+                                                            ":clusterName",
+                                                            "namespaces",
+                                                            ":namespaceName",
+                                                            "gray-del-releases"
+                                                          ],
+                                                          "variable": [
+                                                            {
+                                                              "key": "env"
+                                                            },
+                                                            {
+                                                              "key": "appId"
+                                                            },
+                                                            {
+                                                              "key": "clusterName"
+                                                            },
+                                                            {
+                                                              "key": "namespaceName"
+                                                            }
+                                                          ]
+                                                        }
+                                                      },
+                                                      "status": "OK",
+                                                      "code": 200,
+                                                      "_postman_previewlanguage": "json",
+                                                      "header": [
+                                                        {
+                                                          "key": "Content-Type",
+                                                          "value": "application/json"
+                                                        }
+                                                      ],
+                                                      "cookie": [],
+                                                      "responseTime": null,
+                                                      "body": "{\n  \"id\": \"<long>\",\n  \"appId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"namespaceName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"isAbandoned\": \"<boolean>\",\n  \"configurations\": {\n    \"cillum_7\": \"<string>\"\n  },\n  \"dataChangeCreatedBy\": \"<string>\",\n  \"dataChangeLastModifiedBy\": \"<string>\",\n  \"dataChangeCreatedTime\": \"<dateTime>\",\n  \"dataChangeLastModifiedTime\": \"<dateTime>\"\n}",
+                                                      "createdAt": "2026-07-28T01:02:57.000Z",
+                                                      "updatedAt": "2026-07-28T01:02:57.000Z",
+                                                      "uid": "35240-f69a1edf-8ab6-4739-aa16-d1f43f2870a1"
+                                                    }
+                                                  ],
+                                                  "createdAt": "2026-07-28T01:02:57.000Z",
+                                                  "updatedAt": "2026-07-28T01:02:57.000Z",
+                                                  "uid": "35240-8fa878ef-9efb-4169-8bf5-ea65d7d7e602"
+                                                }
+                                              ],
+                                              "id": "4fdb2e3a-4eec-4e5d-9a69-6da6c5a4486f",
+                                              "createdAt": "2026-07-28T01:02:57.000Z",
+                                              "updatedAt": "2026-07-28T01:02:57.000Z",
+                                              "uid": "35240-4fdb2e3a-4eec-4e5d-9a69-6da6c5a4486f"
+                                            }
+                                          ],
+                                          "id": "dc63c27f-a78c-4a98-8224-db4622ccf73f",
+                                          "createdAt": "2026-07-28T01:02:57.000Z",
+                                          "updatedAt": "2026-07-28T01:02:57.000Z",
+                                          "uid": "35240-dc63c27f-a78c-4a98-8224-db4622ccf73f"
+                                        }
+                                      ],
+                                      "id": "3954477f-80d2-408a-b854-f0e69729316a",
+                                      "createdAt": "2026-07-28T01:02:57.000Z",
+                                      "updatedAt": "2026-07-28T01:02:57.000Z",
+                                      "uid": "35240-3954477f-80d2-408a-b854-f0e69729316a"
+                                    }
+                                  ],
+                                  "id": "db54e8ca-d500-4503-b767-07d37eda9df0",
+                                  "createdAt": "2026-07-28T01:02:57.000Z",
+                                  "updatedAt": "2026-07-28T01:02:57.000Z",
+                                  "uid": "35240-db54e8ca-d500-4503-b767-07d37eda9df0"
+                                }
+                              ],
+                              "id": "7e0b7359-418b-4572-b39f-b2dbf0be41f3",
+                              "createdAt": "2026-07-28T01:02:57.000Z",
+                              "updatedAt": "2026-07-28T01:02:57.000Z",
+                              "uid": "35240-7e0b7359-418b-4572-b39f-b2dbf0be41f3"
+                            }
+                          ],
+                          "id": "2bf57b60-f978-4dc6-9b68-e67dd4279f24",
+                          "createdAt": "2026-07-28T01:02:57.000Z",
+                          "updatedAt": "2026-07-28T01:02:57.000Z",
+                          "uid": "35240-2bf57b60-f978-4dc6-9b68-e67dd4279f24"
+                        }
+                      ],
+                      "id": "5b8cc0ca-eb4e-44cd-8b1f-0d6c9c861ad6",
+                      "createdAt": "2026-07-28T01:02:57.000Z",
+                      "updatedAt": "2026-07-28T01:02:57.000Z",
+                      "uid": "35240-5b8cc0ca-eb4e-44cd-8b1f-0d6c9c861ad6"
+                    },
+                    {
+                      "name": "releases",
+                      "item": [
+                        {
+                          "name": "{releaseId}",
+                          "item": [
+                            {
+                              "name": "rollback",
+                              "item": [
+                                {
+                                  "name": "Rollback a release",
+                                  "id": "42cc677d-dd76-4a46-a009-d5ab515d0af2",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "PUT",
+                                    "header": [],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/openapi/v1/envs/:env/releases/:releaseId/rollback?operator=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "openapi",
+                                        "v1",
+                                        "envs",
+                                        ":env",
+                                        "releases",
+                                        ":releaseId",
+                                        "rollback"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "(Required) Operator performing the rollback",
+                                          "key": "operator",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "b187ac25-4cde-488a-aee8-740c1058b466",
+                                          "key": "env",
+                                          "value": "<string>",
+                                          "description": "(Required) Environment (e.g., DEV, FAT, UAT, PRO)"
+                                        },
+                                        {
+                                          "id": "5f59cf8c-ca34-4572-b98e-1bf054a70ca8",
+                                          "key": "releaseId",
+                                          "value": "<long>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Rolls back to a previous release by release ID."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "20ab91bb-8579-42dd-a109-91f8ce50b52d",
+                                      "name": "Rollback successful",
+                                      "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                          {
+                                            "description": "Added as a part of security scheme: apikey",
+                                            "key": "Authorization",
+                                            "value": "<API Key>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/openapi/v1/envs/:env/releases/:releaseId/rollback?operator=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "openapi",
+                                            "v1",
+                                            "envs",
+                                            ":env",
+                                            "releases",
+                                            ":releaseId",
+                                            "rollback"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) Operator performing the rollback",
+                                              "key": "operator",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "env"
+                                            },
+                                            {
+                                              "key": "releaseId"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T01:02:57.000Z",
+                                      "updatedAt": "2026-07-28T01:02:57.000Z",
+                                      "uid": "35240-20ab91bb-8579-42dd-a109-91f8ce50b52d"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:02:57.000Z",
+                                  "updatedAt": "2026-07-28T01:02:57.000Z",
+                                  "uid": "35240-42cc677d-dd76-4a46-a009-d5ab515d0af2"
+                                }
+                              ],
+                              "id": "9af82d9b-07d8-4351-8b71-00134046f06d",
+                              "createdAt": "2026-07-28T01:02:57.000Z",
+                              "updatedAt": "2026-07-28T01:02:57.000Z",
+                              "uid": "35240-9af82d9b-07d8-4351-8b71-00134046f06d"
+                            }
+                          ],
+                          "id": "283ddb6a-b618-4a99-b705-4e41e345cd62",
+                          "createdAt": "2026-07-28T01:02:57.000Z",
+                          "updatedAt": "2026-07-28T01:02:57.000Z",
+                          "uid": "35240-283ddb6a-b618-4a99-b705-4e41e345cd62"
+                        }
+                      ],
+                      "id": "448fc369-654d-4024-a6b1-6d9c08097abc",
+                      "createdAt": "2026-07-28T01:02:57.000Z",
+                      "updatedAt": "2026-07-28T01:02:57.000Z",
+                      "uid": "35240-448fc369-654d-4024-a6b1-6d9c08097abc"
+                    }
+                  ],
+                  "id": "fadaa420-fe1e-4de4-99b2-ba03d88579bb",
+                  "createdAt": "2026-07-28T01:02:57.000Z",
+                  "updatedAt": "2026-07-28T01:02:57.000Z",
+                  "uid": "35240-fadaa420-fe1e-4de4-99b2-ba03d88579bb"
+                }
+              ],
+              "id": "dea8317d-62fb-4444-9e8e-38332419f6a9",
+              "createdAt": "2026-07-28T01:02:57.000Z",
+              "updatedAt": "2026-07-28T01:02:57.000Z",
+              "uid": "35240-dea8317d-62fb-4444-9e8e-38332419f6a9"
+            }
+          ],
+          "id": "7ea51977-e99c-465d-9450-51566afa9a50",
+          "createdAt": "2026-07-28T01:02:57.000Z",
+          "updatedAt": "2026-07-28T01:02:57.000Z",
+          "uid": "35240-7ea51977-e99c-465d-9450-51566afa9a50"
+        }
+      ],
+      "id": "b2cedc25-702a-4fab-90d1-6658f582a8d2",
+      "createdAt": "2026-07-28T01:02:57.000Z",
+      "updatedAt": "2026-07-28T01:02:57.000Z",
+      "uid": "35240-b2cedc25-702a-4fab-90d1-6658f582a8d2"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8070"
+    }
+  ]
+}

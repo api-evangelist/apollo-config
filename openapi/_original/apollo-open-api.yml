@@ -1,0 +1,722 @@
+openapi: 3.1.0
+info:
+  title: Apollo Config Open API
+  description: >-
+    Apollo Open API for configuration management including app management,
+    namespace management, configuration publishing, and release management.
+    Apollo provides centralized configuration management for distributed systems
+    with real-time push, versioning, and gray release support.
+  version: 2.2.0
+  contact:
+    name: Apollo Config
+    url: https://www.apolloconfig.com/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: http://localhost:8070
+    description: Local Apollo Portal
+  - url: http://{portal_host}:{port}
+    description: Custom Apollo Portal
+    variables:
+      portal_host:
+        default: localhost
+      port:
+        default: '8070'
+security:
+  - PortalToken: []
+paths:
+  /openapi/v1/apps:
+    get:
+      operationId: listApps
+      summary: List all apps
+      description: Returns a list of all registered applications.
+      tags:
+        - Apps
+      responses:
+        '200':
+          description: List of applications
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/App'
+  /openapi/v1/apps/{appId}:
+    get:
+      operationId: getApp
+      summary: Get app info
+      description: Returns information about a specific application.
+      tags:
+        - Apps
+      parameters:
+        - $ref: '#/components/parameters/appId'
+      responses:
+        '200':
+          description: Application info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/App'
+        '404':
+          description: App not found
+  /openapi/v1/apps/{appId}/envclusters:
+    get:
+      operationId: getEnvClusters
+      summary: Get environments and clusters
+      description: Returns all environments and clusters for an application.
+      tags:
+        - Clusters
+      parameters:
+        - $ref: '#/components/parameters/appId'
+      responses:
+        '200':
+          description: Environments and clusters
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    env:
+                      type: string
+                    clusters:
+                      type: array
+                      items:
+                        type: string
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}:
+    get:
+      operationId: getCluster
+      summary: Get cluster info
+      description: Returns information about a specific cluster.
+      tags:
+        - Clusters
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+      responses:
+        '200':
+          description: Cluster info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cluster'
+        '404':
+          description: Cluster not found
+    post:
+      operationId: createCluster
+      summary: Create a cluster
+      description: Creates a new cluster for an application in an environment.
+      tags:
+        - Clusters
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - appId
+              properties:
+                name:
+                  type: string
+                appId:
+                  type: string
+                dataChangeCreatedBy:
+                  type: string
+      responses:
+        '200':
+          description: Cluster created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cluster'
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces:
+    get:
+      operationId: listNamespaces
+      summary: List namespaces
+      description: Returns all namespaces for an app/env/cluster combination.
+      tags:
+        - Namespaces
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+      responses:
+        '200':
+          description: List of namespaces
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Namespace'
+    post:
+      operationId: createNamespace
+      summary: Create a namespace
+      description: Creates a new namespace (app-level namespace definition).
+      tags:
+        - Namespaces
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - appId
+                - clusterName
+                - namespaceName
+                - format
+                - isPublic
+              properties:
+                appId:
+                  type: string
+                clusterName:
+                  type: string
+                namespaceName:
+                  type: string
+                format:
+                  type: string
+                  enum:
+                    - properties
+                    - xml
+                    - json
+                    - yml
+                    - yaml
+                    - txt
+                isPublic:
+                  type: boolean
+                comment:
+                  type: string
+                dataChangeCreatedBy:
+                  type: string
+      responses:
+        '200':
+          description: Namespace created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Namespace'
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}:
+    get:
+      operationId: getNamespace
+      summary: Get namespace info
+      description: Returns information about a specific namespace including items.
+      tags:
+        - Namespaces
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+      responses:
+        '200':
+          description: Namespace info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Namespace'
+        '404':
+          description: Namespace not found
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/lock:
+    get:
+      operationId: getNamespaceLock
+      summary: Get namespace lock info
+      description: Returns lock information for a namespace (who modified it last).
+      tags:
+        - Namespaces
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+      responses:
+        '200':
+          description: Lock info
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  namespaceName:
+                    type: string
+                  isLocked:
+                    type: boolean
+                  lockedBy:
+                    type: string
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/items:
+    get:
+      operationId: listItems
+      summary: List configuration items
+      description: Returns all configuration items in a namespace.
+      tags:
+        - Items
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+      responses:
+        '200':
+          description: Configuration items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+    post:
+      operationId: createItem
+      summary: Create a configuration item
+      description: Creates a new key-value configuration item in a namespace.
+      tags:
+        - Items
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - key
+                - value
+                - dataChangeCreatedBy
+              properties:
+                key:
+                  type: string
+                value:
+                  type: string
+                comment:
+                  type: string
+                dataChangeCreatedBy:
+                  type: string
+                  description: Created by user
+      responses:
+        '200':
+          description: Item created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '400':
+          description: Item already exists
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/items/{key}:
+    get:
+      operationId: getItem
+      summary: Get a configuration item
+      tags:
+        - Items
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Configuration item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '404':
+          description: Item not found
+    put:
+      operationId: updateItem
+      summary: Update a configuration item
+      tags:
+        - Items
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: createIfNotExists
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Create item if it does not exist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - key
+                - value
+                - dataChangeLastModifiedBy
+              properties:
+                key:
+                  type: string
+                value:
+                  type: string
+                comment:
+                  type: string
+                dataChangeLastModifiedBy:
+                  type: string
+      responses:
+        '200':
+          description: Item updated
+    delete:
+      operationId: deleteItem
+      summary: Delete a configuration item
+      tags:
+        - Items
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: operator
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Operator (user) performing the delete
+      responses:
+        '200':
+          description: Item deleted
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/releases/latest:
+    get:
+      operationId: getLatestRelease
+      summary: Get latest release
+      description: Returns the latest active release for a namespace.
+      tags:
+        - Releases
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+      responses:
+        '200':
+          description: Latest release
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Release'
+        '404':
+          description: No releases found
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/releases:
+    post:
+      operationId: createRelease
+      summary: Publish a release
+      description: Publishes current configuration items as a new release.
+      tags:
+        - Releases
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - releaseTitle
+                - releasedBy
+              properties:
+                releaseTitle:
+                  type: string
+                  description: Title for the release
+                releaseComment:
+                  type: string
+                  description: Optional comment
+                releasedBy:
+                  type: string
+                  description: User who is publishing
+      responses:
+        '200':
+          description: Release created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Release'
+  /openapi/v1/envs/{env}/releases/{releaseId}/rollback:
+    put:
+      operationId: rollbackRelease
+      summary: Rollback a release
+      description: Rolls back to a previous release by release ID.
+      tags:
+        - Releases
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - name: releaseId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: operator
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Operator performing the rollback
+      responses:
+        '200':
+          description: Rollback successful
+  /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces/{namespaceName}/gray-del-releases:
+    post:
+      operationId: createGrayRelease
+      summary: Create a gray release
+      description: Creates a gray (canary) release for a subset of instances.
+      tags:
+        - Releases
+      parameters:
+        - $ref: '#/components/parameters/env'
+        - $ref: '#/components/parameters/appId'
+        - $ref: '#/components/parameters/clusterName'
+        - $ref: '#/components/parameters/namespaceName'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - releaseTitle
+                - releasedBy
+                - grayDelKeys
+              properties:
+                releaseTitle:
+                  type: string
+                releaseComment:
+                  type: string
+                releasedBy:
+                  type: string
+                grayDelKeys:
+                  type: array
+                  items:
+                    type: string
+                  description: Keys to include in the gray release
+      responses:
+        '200':
+          description: Gray release created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Release'
+components:
+  securitySchemes:
+    PortalToken:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Apollo Portal open API token
+  parameters:
+    env:
+      name: env
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Environment (e.g., DEV, FAT, UAT, PRO)
+    appId:
+      name: appId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Application ID
+    clusterName:
+      name: clusterName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Cluster name (default is 'default')
+    namespaceName:
+      name: namespaceName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Namespace name (default is 'application')
+  schemas:
+    App:
+      type: object
+      properties:
+        name:
+          type: string
+        appId:
+          type: string
+        orgId:
+          type: string
+        orgName:
+          type: string
+        ownerName:
+          type: string
+        ownerEmail:
+          type: string
+        dataChangeCreatedBy:
+          type: string
+        dataChangeLastModifiedBy:
+          type: string
+        dataChangeCreatedTime:
+          type: string
+          format: date-time
+        dataChangeLastModifiedTime:
+          type: string
+          format: date-time
+    Cluster:
+      type: object
+      properties:
+        name:
+          type: string
+        appId:
+          type: string
+        dataChangeCreatedBy:
+          type: string
+        dataChangeLastModifiedBy:
+          type: string
+        dataChangeCreatedTime:
+          type: string
+          format: date-time
+        dataChangeLastModifiedTime:
+          type: string
+          format: date-time
+    Namespace:
+      type: object
+      properties:
+        appId:
+          type: string
+        clusterName:
+          type: string
+        namespaceName:
+          type: string
+        comment:
+          type: string
+        format:
+          type: string
+          enum:
+            - properties
+            - xml
+            - json
+            - yml
+            - yaml
+            - txt
+        isPublic:
+          type: boolean
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+        dataChangeCreatedBy:
+          type: string
+        dataChangeLastModifiedBy:
+          type: string
+        dataChangeCreatedTime:
+          type: string
+          format: date-time
+        dataChangeLastModifiedTime:
+          type: string
+          format: date-time
+    Item:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        namespaceId:
+          type: integer
+          format: int64
+        key:
+          type: string
+        value:
+          type: string
+        comment:
+          type: string
+        lineNum:
+          type: integer
+        dataChangeCreatedBy:
+          type: string
+        dataChangeLastModifiedBy:
+          type: string
+        dataChangeCreatedTime:
+          type: string
+          format: date-time
+        dataChangeLastModifiedTime:
+          type: string
+          format: date-time
+    Release:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        appId:
+          type: string
+        clusterName:
+          type: string
+        namespaceName:
+          type: string
+        name:
+          type: string
+          description: Release title
+        comment:
+          type: string
+        isAbandoned:
+          type: boolean
+        configurations:
+          type: object
+          additionalProperties:
+            type: string
+          description: Key-value configuration snapshot at release time
+        dataChangeCreatedBy:
+          type: string
+        dataChangeLastModifiedBy:
+          type: string
+        dataChangeCreatedTime:
+          type: string
+          format: date-time
+        dataChangeLastModifiedTime:
+          type: string
+          format: date-time
+tags:
+  - name: Apps
+    description: Application management
+  - name: Clusters
+    description: Cluster management
+  - name: Namespaces
+    description: Namespace management
+  - name: Items
+    description: Configuration item management
+  - name: Releases
+    description: Release and publish management
