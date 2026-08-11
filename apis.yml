@@ -169,6 +169,15 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-release-schema.json
 common:
+  - type: SecurityPolicy
+    url: https://github.com/apolloconfig/apollo/blob/master/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/apolloconfig/apollo/blob/master/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/apolloconfig/apollo/blob/master/CONTRIBUTING.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/apolloconfig/apollo/blob/master/LICENSE
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/apollo-config/overview
   - type: AgenticAccess
