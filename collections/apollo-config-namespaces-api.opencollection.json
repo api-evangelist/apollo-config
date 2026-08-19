@@ -1,0 +1,166 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apollo Config Open Apps Namespaces API",
+    "version": "2.2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Namespaces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List namespaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              }
+            ]
+          },
+          "docs": "Returns all namespaces for an app/env/cluster combination."
+        },
+        {
+          "info": {
+            "name": "Create a namespace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new namespace (app-level namespace definition)."
+        },
+        {
+          "info": {
+            "name": "Get namespace info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ]
+          },
+          "docs": "Returns information about a specific namespace including items."
+        },
+        {
+          "info": {
+            "name": "Get namespace lock info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/lock",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ]
+          },
+          "docs": "Returns lock information for a namespace (who modified it last)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

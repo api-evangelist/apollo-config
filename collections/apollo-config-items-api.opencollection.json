@@ -1,0 +1,246 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apollo Config Open Apps Items API",
+    "version": "2.2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List configuration items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ]
+          },
+          "docs": "Returns all configuration items in a namespace."
+        },
+        {
+          "info": {
+            "name": "Create a configuration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new key-value configuration item in a namespace."
+        },
+        {
+          "info": {
+            "name": "Get a configuration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items/:key",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a configuration item"
+        },
+        {
+          "info": {
+            "name": "Update a configuration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items/:key",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "createIfNotExists",
+                "value": "",
+                "type": "query",
+                "description": "Create item if it does not exist"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a configuration item"
+        },
+        {
+          "info": {
+            "name": "Delete a configuration item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/items/:key",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "operator",
+                "value": "",
+                "type": "query",
+                "description": "Operator (user) performing the delete"
+              }
+            ]
+          },
+          "docs": "Delete a configuration item"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

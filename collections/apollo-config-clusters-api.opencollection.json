@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apollo Config Open Apps Clusters API",
+    "version": "2.2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clusters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get environments and clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/apps/:appId/envclusters",
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              }
+            ]
+          },
+          "docs": "Returns all environments and clusters for an application."
+        },
+        {
+          "info": {
+            "name": "Get cluster info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              }
+            ]
+          },
+          "docs": "Returns information about a specific cluster."
+        },
+        {
+          "info": {
+            "name": "Create a cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new cluster for an application in an environment."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

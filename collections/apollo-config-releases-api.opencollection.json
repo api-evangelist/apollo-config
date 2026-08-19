@@ -1,0 +1,175 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apollo Config Open Apps Releases API",
+    "version": "2.2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Releases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get latest release",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/releases/latest",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ]
+          },
+          "docs": "Returns the latest active release for a namespace."
+        },
+        {
+          "info": {
+            "name": "Publish a release",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/releases",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publishes current configuration items as a new release."
+        },
+        {
+          "info": {
+            "name": "Rollback a release",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/releases/:releaseId/rollback",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "releaseId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "operator",
+                "value": "",
+                "type": "query",
+                "description": "Operator performing the rollback"
+              }
+            ]
+          },
+          "docs": "Rolls back to a previous release by release ID."
+        },
+        {
+          "info": {
+            "name": "Create a gray release",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8070/openapi/v1/envs/:env/apps/:appId/clusters/:clusterName/namespaces/:namespaceName/gray-del-releases",
+            "params": [
+              {
+                "name": "env",
+                "value": "",
+                "type": "path",
+                "description": "Environment (e.g., DEV, FAT, UAT, PRO)"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Application ID"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "path",
+                "description": "Cluster name (default is 'default')"
+              },
+              {
+                "name": "namespaceName",
+                "value": "",
+                "type": "path",
+                "description": "Namespace name (default is 'application')"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a gray (canary) release for a subset of instances."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

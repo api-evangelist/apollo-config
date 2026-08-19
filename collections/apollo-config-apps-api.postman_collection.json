@@ -1,0 +1,281 @@
+{
+  "item": [
+    {
+      "id": "ee824c73-36c2-4b46-8fe2-d34a4e3bc3bc",
+      "name": "Apps",
+      "description": {
+        "content": "Application management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "750964ab-22b6-4d02-9129-22f9e11e2d89",
+          "name": "List all apps",
+          "request": {
+            "name": "List all apps",
+            "description": {
+              "content": "Returns a list of all registered applications.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "apps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d81625c6-edf0-4b7e-b244-ed2c65b8c378",
+              "name": "List of applications",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"appId\": \"string\",\n    \"orgId\": \"string\",\n    \"orgName\": \"string\",\n    \"ownerName\": \"string\",\n    \"ownerEmail\": \"string\",\n    \"dataChangeCreatedBy\": \"string\",\n    \"dataChangeLastModifiedBy\": \"string\",\n    \"dataChangeCreatedTime\": \"1978-06-08T02:30:14.714Z\",\n    \"dataChangeLastModifiedTime\": \"2001-01-10T02:12:50.327Z\"\n  },\n  {\n    \"name\": \"string\",\n    \"appId\": \"string\",\n    \"orgId\": \"string\",\n    \"orgName\": \"string\",\n    \"ownerName\": \"string\",\n    \"ownerEmail\": \"string\",\n    \"dataChangeCreatedBy\": \"string\",\n    \"dataChangeLastModifiedBy\": \"string\",\n    \"dataChangeCreatedTime\": \"1987-08-25T03:32:16.013Z\",\n    \"dataChangeLastModifiedTime\": \"1963-01-03T04:25:15.128Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "425f3011-eda4-499b-9076-dd5e8ece5bde",
+          "name": "Get app info",
+          "request": {
+            "name": "Get app info",
+            "description": {
+              "content": "Returns information about a specific application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "openapi",
+                "v1",
+                "apps",
+                ":appId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appId",
+                  "description": "(Required) Application ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a37aef5c-75a9-485a-9a04-7a46b2b14c63",
+              "name": "Application info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"appId\": \"string\",\n  \"orgId\": \"string\",\n  \"orgName\": \"string\",\n  \"ownerName\": \"string\",\n  \"ownerEmail\": \"string\",\n  \"dataChangeCreatedBy\": \"string\",\n  \"dataChangeLastModifiedBy\": \"string\",\n  \"dataChangeCreatedTime\": \"1966-05-05T07:54:58.923Z\",\n  \"dataChangeLastModifiedTime\": \"2015-04-23T18:44:03.586Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b913ae49-3963-4e4a-8c41-6834c8987e50",
+              "name": "App not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "openapi",
+                    "v1",
+                    "apps",
+                    ":appId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appId",
+                      "description": "(Required) Application ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8070",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "28a94a64-8e8a-4429-99ec-e6a0a3b44961",
+    "name": "Apollo Config Open Apps API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apollo Open API for configuration management including app management, namespace management, configuration publishing, and release management. Apollo provides centralized configuration management for distributed systems with real-time push, versioning, and gray release support.\n\nContact Support:\n Name: Apollo Config",
+      "type": "text/plain"
+    }
+  }
+}
