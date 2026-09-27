@@ -60,6 +60,14 @@ paths:
         '404':
           description: App not found
 components:
+  parameters:
+    appId:
+      name: appId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Application ID
   schemas:
     App:
       type: object
@@ -86,14 +94,6 @@ components:
         dataChangeLastModifiedTime:
           type: string
           format: date-time
-  parameters:
-    appId:
-      name: appId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Application ID
   securitySchemes:
     PortalToken:
       type: apiKey

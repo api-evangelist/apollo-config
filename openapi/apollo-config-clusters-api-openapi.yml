@@ -104,28 +104,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Cluster'
 components:
-  parameters:
-    env:
-      name: env
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Environment (e.g., DEV, FAT, UAT, PRO)
-    appId:
-      name: appId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Application ID
-    clusterName:
-      name: clusterName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Cluster name (default is 'default')
   schemas:
     Cluster:
       type: object
@@ -144,6 +122,28 @@ components:
         dataChangeLastModifiedTime:
           type: string
           format: date-time
+  parameters:
+    appId:
+      name: appId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Application ID
+    clusterName:
+      name: clusterName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Cluster name (default is 'default')
+    env:
+      name: env
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Environment (e.g., DEV, FAT, UAT, PRO)
   securitySchemes:
     PortalToken:
       type: apiKey

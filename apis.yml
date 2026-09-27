@@ -45,7 +45,7 @@ tags:
   - Distributed Systems
   - Java
   - Microservices
-  - Open-Source
+  - Open Source
   - Real-Time Configuration
 tags_raw:
   - Apache 2.0
@@ -56,6 +56,7 @@ tags_raw:
   - Microservices
   - Open Source
   - Real-Time Configuration
+  - Open-Source
 url: https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/apis.yml
 created: '2026-03-26'
 modified: '2026-05-19'
