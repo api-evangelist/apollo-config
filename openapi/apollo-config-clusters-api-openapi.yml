@@ -123,20 +123,6 @@ components:
           type: string
           format: date-time
   parameters:
-    appId:
-      name: appId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Application ID
-    clusterName:
-      name: clusterName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Cluster name (default is 'default')
     env:
       name: env
       in: path
@@ -144,6 +130,20 @@ components:
       schema:
         type: string
       description: Environment (e.g., DEV, FAT, UAT, PRO)
+    clusterName:
+      name: clusterName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Cluster name (default is 'default')
+    appId:
+      name: appId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Application ID
   securitySchemes:
     PortalToken:
       type: apiKey
