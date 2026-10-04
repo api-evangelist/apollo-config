@@ -1,0 +1,45 @@
+slug: apollo-config
+provider: Apollo Config
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Items
+  spec_file: apollo-config-items-api-openapi.yml
+  capability_id: BC-4210.60
+  capability_id_l1: BC-4210
+  capability_name: Configuration & Secrets Management
+  confidence: 0.88
+  evidence: POST .../namespaces/{namespaceName}/items  createItem  Create a configuration item
+  reason: Full CRUD over individual runtime configuration key/value items consumed by services — textbook
+    Configuration & Secrets Management.
+- tag: Namespaces
+  spec_file: apollo-config-namespaces-api-openapi.yml
+  capability_id: BC-4210.60
+  capability_id_l1: BC-4210
+  capability_name: Configuration & Secrets Management
+  confidence: 0.8
+  evidence: POST /openapi/v1/envs/{env}/apps/{appId}/clusters/{clusterName}/namespaces  createNamespace  Create
+    a namespace
+  reason: Namespaces are the container for configuration items (schemas Item, Namespace) in a centralized
+    config system, including edit locking — management of runtime configuration values.
+- tag: Releases
+  spec_file: apollo-config-releases-api-openapi.yml
+  capability_id: BC-4210
+  capability_id_l1: BC-4210
+  capability_name: Software Release & Deployment Management
+  confidence: 0.7
+  evidence: POST .../releases  createRelease  Publish a release; PUT .../releases/{releaseId}/rollback  rollbackRelease;
+    createGrayRelease  Create a gray release
+  reason: Publishing, rolling back and gray-releasing configuration changes to running services is release/deployment
+    control of software configuration. Split between Release Engineering, Deployment Orchestration and
+    Configuration Management, so L1 only.
