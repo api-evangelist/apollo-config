@@ -145,13 +145,6 @@ paths:
                     type: string
 components:
   parameters:
-    namespaceName:
-      name: namespaceName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Namespace name (default is 'application')
     env:
       name: env
       in: path
@@ -166,6 +159,13 @@ components:
       schema:
         type: string
       description: Cluster name (default is 'default')
+    namespaceName:
+      name: namespaceName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Namespace name (default is 'application')
     appId:
       name: appId
       in: path

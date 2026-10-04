@@ -104,24 +104,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Cluster'
 components:
-  schemas:
-    Cluster:
-      type: object
-      properties:
-        name:
-          type: string
-        appId:
-          type: string
-        dataChangeCreatedBy:
-          type: string
-        dataChangeLastModifiedBy:
-          type: string
-        dataChangeCreatedTime:
-          type: string
-          format: date-time
-        dataChangeLastModifiedTime:
-          type: string
-          format: date-time
   parameters:
     env:
       name: env
@@ -144,6 +126,24 @@ components:
       schema:
         type: string
       description: Application ID
+  schemas:
+    Cluster:
+      type: object
+      properties:
+        name:
+          type: string
+        appId:
+          type: string
+        dataChangeCreatedBy:
+          type: string
+        dataChangeLastModifiedBy:
+          type: string
+        dataChangeCreatedTime:
+          type: string
+          format: date-time
+        dataChangeLastModifiedTime:
+          type: string
+          format: date-time
   securitySchemes:
     PortalToken:
       type: apiKey
