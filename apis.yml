@@ -204,6 +204,12 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-release-schema.json
 common:
+  - type: Plans
+    url: plans/apollo-config-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/apollo-config-rate-limits.yml
+  - type: FinOps
+    url: finops/apollo-config-finops.yml
   - type: CapabilityMap
     url: capabilities/apollo-config-capability-edges.yml
     name: Apollo Config Business Capability Map
