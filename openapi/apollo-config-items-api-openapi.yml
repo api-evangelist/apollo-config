@@ -180,20 +180,6 @@ paths:
           description: Item deleted
 components:
   parameters:
-    env:
-      name: env
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Environment (e.g., DEV, FAT, UAT, PRO)
-    clusterName:
-      name: clusterName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Cluster name (default is 'default')
     namespaceName:
       name: namespaceName
       in: path
@@ -208,6 +194,20 @@ components:
       schema:
         type: string
       description: Application ID
+    clusterName:
+      name: clusterName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Cluster name (default is 'default')
+    env:
+      name: env
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Environment (e.g., DEV, FAT, UAT, PRO)
   schemas:
     Item:
       type: object

@@ -150,6 +150,35 @@ paths:
               schema:
                 $ref: '#/components/schemas/Release'
 components:
+  parameters:
+    namespaceName:
+      name: namespaceName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Namespace name (default is 'application')
+    appId:
+      name: appId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Application ID
+    clusterName:
+      name: clusterName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Cluster name (default is 'default')
+    env:
+      name: env
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Environment (e.g., DEV, FAT, UAT, PRO)
   schemas:
     Release:
       type: object
@@ -185,35 +214,6 @@ components:
         dataChangeLastModifiedTime:
           type: string
           format: date-time
-  parameters:
-    env:
-      name: env
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Environment (e.g., DEV, FAT, UAT, PRO)
-    clusterName:
-      name: clusterName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Cluster name (default is 'default')
-    namespaceName:
-      name: namespaceName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Namespace name (default is 'application')
-    appId:
-      name: appId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Application ID
   securitySchemes:
     PortalToken:
       type: apiKey
