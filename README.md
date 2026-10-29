@@ -1,4 +1,4 @@
-# Apollo Config (apollo-config)
+# Apollo Config
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,79 +66,188 @@
 
 Apollo is a reliable, open-source configuration management system suitable for microservice configuration management scenarios, providing centralized configuration management, real-time updates, versioning, and multi-environment support. Originally developed by Ctrip, now maintained by the apolloconfig community under Apache 2.0 license.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/apis.yml)
+**Areas:** Apache 2.0 · Configuration Management · Ctrip · Distributed Systems · Java · Microservices · Open Source · Real-Time Configuration
 
-## Scope
+## Apollo Config on APIs.io
 
-- **Type:** Index
+Everything profiled for Apollo Config is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apollo-config/](https://apis.io/providers/apollo-config/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Apache 2.0
-- Configuration Management
-- Ctrip
-- Distributed Systems
-- Java
-- Microservices
-- Open Source
-- Real-Time Configuration
+- [Apollo Config Apps API](https://apis.io/apis/apollo-config/apollo-config-apps-api/) — Application management
+- [Apollo Config Clusters API](https://apis.io/apis/apollo-config/apollo-config-clusters-api/) — Cluster management
+- [Apollo Config Items API](https://apis.io/apis/apollo-config/apollo-config-items-api/) — Configuration item management
+- [Apollo Config Namespaces API](https://apis.io/apis/apollo-config/apollo-config-namespaces-api/) — Namespace management
+- [Apollo Config Releases API](https://apis.io/apis/apollo-config/apollo-config-releases-api/) — Release and publish management
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-26
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agent skills (9)
 
-### Apollo Config
+Agent skills built on the API.
 
-Apollo is a reliable, open-source configuration management system suitable for microservice configuration management scenarios, providing centralized configuration management, real-time updates, versioning, and multi-environment support. The Open API provides programmatic access to app management, namespace management, configuration publishing, and release management including gray releases.
+- [apollo-community-review](https://apis.io/agent-skills/apollo-config/apollo-community-review/)
+- [apollo-contributor-promotion-review](https://apis.io/agent-skills/apollo-config/apollo-contributor-promotion-review/)
+- [apollo-helm-chart-release](https://apis.io/agent-skills/apollo-config/apollo-helm-chart-release/)
+- [apollo-issue-review](https://apis.io/agent-skills/apollo-config/apollo-issue-review/)
+- [apollo-issue-to-pr](https://apis.io/agent-skills/apollo-config/apollo-issue-to-pr/)
+- [apollo-java-release](https://apis.io/agent-skills/apollo-config/apollo-java-release/)
+- [apollo-pr-review](https://apis.io/agent-skills/apollo-config/apollo-pr-review/)
+- [apollo-quick-start-release](https://apis.io/agent-skills/apollo-config/apollo-quick-start-release/)
+- [apollo-release](https://apis.io/agent-skills/apollo-config/apollo-release/)
 
-- **Human URL:** [https://www.apolloconfig.com/](https://www.apolloconfig.com/)
-- **Base URL:** `http://localhost:8070`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Apache 2.0
-- Configuration Management
-- Distributed Systems
-- Java
-- Microservices
-- Open Source
-- Real-Time Configuration
+- [Apollo Config Agentic Access](https://apis.io/agentic-access/apollo-config/apollo-config-agentic-access/)
 
-#### Properties
+#### JSON Schema (5)
 
-- [Documentation](https://www.apolloconfig.com/#/en/portal/apollo-open-api-platform)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/openapi/apollo-open-api.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-app-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-cluster-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-namespace-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-item-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-schema/apollo-open-api-release-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [Postman Collection](collections/apollo-open-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/apollo-open-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+The data models the API reads and writes.
 
-## Common Properties
+- [App](https://apis.io/schemas/apollo-config/apollo-open-api-app/)
+- [Cluster](https://apis.io/schemas/apollo-config/apollo-open-api-cluster/)
+- [Item](https://apis.io/schemas/apollo-config/apollo-open-api-item/)
+- [Namespace](https://apis.io/schemas/apollo-config/apollo-open-api-namespace/)
+- [Release](https://apis.io/schemas/apollo-config/apollo-open-api-release/)
 
+#### JSON Structure (5)
+
+Data models expressed in JSON Structure.
+
+- [Apollo Open Api App Structure](https://apis.io/json-structure/apollo-config/apollo-open-api-app-structure/)
+- [Apollo Open Api Cluster Structure](https://apis.io/json-structure/apollo-config/apollo-open-api-cluster-structure/)
+- [Apollo Open Api Item Structure](https://apis.io/json-structure/apollo-config/apollo-open-api-item-structure/)
+- [Apollo Open Api Namespace Structure](https://apis.io/json-structure/apollo-config/apollo-open-api-namespace-structure/)
+- [Apollo Open Api Release Structure](https://apis.io/json-structure/apollo-config/apollo-open-api-release-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apollo Config Open Api Context](https://apis.io/jsonld/apollo-config/apollo-config-open-api-context/)
+
+#### Examples (5)
+
+Example requests and responses.
+
+- [Apollo Open Api App Example](https://apis.io/examples/apollo-config/apollo-open-api-app-example/)
+- [Apollo Open Api Cluster Example](https://apis.io/examples/apollo-config/apollo-open-api-cluster-example/)
+- [Apollo Open Api Item Example](https://apis.io/examples/apollo-config/apollo-open-api-item-example/)
+- [Apollo Open Api Namespace Example](https://apis.io/examples/apollo-config/apollo-open-api-namespace-example/)
+- [Apollo Open Api Release Example](https://apis.io/examples/apollo-config/apollo-open-api-release-example/)
+
+#### Collections (11)
+
+Postman and Open Collection request collections.
+
+- [Apollo Config Open Apps API](https://apis.io/collections/apollo-config/open-apollo-config-apps-api/)
+- [Apollo Config Open Apps Clusters API](https://apis.io/collections/apollo-config/open-apollo-config-clusters-api/)
+- [Apollo Config Open Apps Items API](https://apis.io/collections/apollo-config/open-apollo-config-items-api/)
+- [Apollo Config Open Apps Namespaces API](https://apis.io/collections/apollo-config/open-apollo-config-namespaces-api/)
+- [Apollo Config Open Apps Releases API](https://apis.io/collections/apollo-config/open-apollo-config-releases-api/)
+- [Apollo Config Open API](https://apis.io/collections/apollo-config/open-apollo-open-api/)
+- [Apollo Config Open Apps API](https://apis.io/collections/apollo-config/postman-apollo-config-apps-api/)
+- [Apollo Config Open Apps Clusters API](https://apis.io/collections/apollo-config/postman-apollo-config-clusters-api/)
+- [Apollo Config Open Apps Items API](https://apis.io/collections/apollo-config/postman-apollo-config-items-api/)
+- [Apollo Config Open Apps Namespaces API](https://apis.io/collections/apollo-config/postman-apollo-config-namespaces-api/)
+- [Apollo Config Open Apps Releases API](https://apis.io/collections/apollo-config/postman-apollo-config-releases-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apollo Config — jsonschema rules](https://apis.io/rules/apollo-config/apollo-config-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apollo Config Authentication](https://apis.io/security/apollo-config/apollo-config-authentication/)
+- [Apollo Config Domain Security](https://apis.io/security/apollo-config/apollo-config-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apollo Config Plans Pricing](https://apis.io/plans/apollo-config/apollo-config-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apollo Config Rate Limits](https://apis.io/rate-limits/apollo-config/apollo-config-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apollo Config Finops](https://apis.io/finops/apollo-config/apollo-config-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apolloconfig.com/)
 - [Documentation](https://www.apolloconfig.com/#/en/)
-- [Getting Started](https://www.apolloconfig.com/#/en/deployment/quick-start)
-- [GitHub Repository](https://github.com/apolloconfig/apollo)
-- [GitHub Organization](https://github.com/apolloconfig)
-- [Release Notes](https://github.com/apolloconfig/apollo/releases)
+- [Getting started](https://www.apolloconfig.com/#/en/deployment/quick-start)
 - [Support](https://github.com/apolloconfig/apollo/issues)
-- [SDK](https://github.com/apolloconfig/apollo-java)
-- [SDK](https://github.com/apolloconfig/apollo.net)
-- [SDK](https://github.com/apolloconfig/agollo)
-- [Code Examples](https://github.com/apolloconfig/apollo-demo-java)
-- [Code Examples](https://github.com/apolloconfig/apollo-use-cases)
-- [JSON-LD](https://raw.githubusercontent.com/api-evangelist/apollo-config/refs/heads/main/json-ld/apollo-config-open-api-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Agent Skill](https://github.com/apolloconfig/apollo-skills)
+- [GitHub](https://github.com/apolloconfig)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 44.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 60.8 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 51.7 |
+| Access clarity | 7.9 |
+
+**Agent readiness 24.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | unknown |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apollo-config/](https://apis.io/providers/apollo-config/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apollo Config: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apollo-config/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
